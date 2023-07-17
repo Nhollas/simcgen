@@ -1,1 +1,1 @@
-# simcgen
+## WOW Simulation Gear Generator Tool
