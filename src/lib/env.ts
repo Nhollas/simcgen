@@ -1,5 +1,8 @@
 import { z } from "zod";
 
 export const env = z
-  .object({})
+  .object({
+    BlizzClientId: z.string(),
+    BlizzClientSecret: z.string(),
+  })
   .parse(process.env);
