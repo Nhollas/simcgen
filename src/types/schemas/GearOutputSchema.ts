@@ -38,6 +38,8 @@ const gemSchema = z.object({
   dps: z.boolean(),
 });
 
+export type GemSchema = z.infer<typeof gemSchema>;
+
 const prismaticSchema = z.object({
   type: z.string(),
   staticSlots: z.number(),
@@ -124,6 +126,7 @@ const neckSchema = z.object({
   profession: professionSchema,
   expansion: z.number(),
   baseItemLevel: z.number(),
+  enchant_id: z.string().optional(),
 });
 
 const waistSchema = z.object({
@@ -134,6 +137,7 @@ const waistSchema = z.object({
   equipped: z.boolean(),
   name: z.string(),
   icon: z.string(),
+  enchant_id: z.string().optional(),
   quality: z.number(),
   itemClass: z.number(),
   itemSubClass: z.number(),
@@ -163,6 +167,7 @@ const footSchema = z.object({
   itemSubClass: z.number(),
   inventoryType: z.number(),
   itemLevel: z.number(),
+  enchant_id: z.string().optional(),
   stats: z.array(statSchema),
   bonusLists: z.array(z.number()),
   sources: z.array(sourceSchema),
@@ -177,7 +182,7 @@ const footSchema = z.object({
 const mainHandSchema = z.object({
   id: z.number(),
   bonus_id: z.string(),
-  enchant_id: z.string(),
+  enchant_id: z.string().optional(),
   context: z.string(),
   crafted_stats: z.string(),
   equipped: z.boolean(),
@@ -202,8 +207,8 @@ const mainHandSchema = z.object({
 const ringSchema = z.object({
   id: z.number(),
   bonus_id: z.string(),
+  enchant_id: z.string().optional(),
   gem_id: z.string(),
-  enchant_id: z.string(),
   context: z.string(),
   crafted_stats: z.string(),
   equipped: z.boolean(),
@@ -253,6 +258,7 @@ const headSchema = z.object({
   stats: z.array(statSchema),
   bonusLists: z.array(z.number()),
   sources: z.array(sourceSchema),
+  enchant_id: z.string().optional(),
   expansion: z.number(),
   baseItemLevel: z.number(),
   socketInfo: socketInfoSchema,
@@ -278,6 +284,7 @@ const shoulderSchema = z.object({
   sources: z.array(sourceSchema),
   expansion: z.number(),
   baseItemLevel: z.number(),
+  enchant_id: z.string().optional(),
   socketInfo: socketInfoSchema,
   upgrade: upgradeSchema,
 });
@@ -299,6 +306,7 @@ const backSchema = z.object({
   sources: z.array(sourceSchema),
   expansion: z.number(),
   baseItemLevel: z.number(),
+  enchant_id: z.string().optional(),
   socketInfo: socketInfoSchema,
   upgrade: upgradeSchema,
 });
@@ -315,6 +323,7 @@ const chestSchema = z.object({
   itemSubClass: z.number(),
   inventoryType: z.number(),
   itemLevel: z.number(),
+  enchant_id: z.string().optional(),
   itemSetId: z.number(),
   allowableClasses: z.array(z.number()),
   stats: z.array(statSchema),
@@ -333,6 +342,7 @@ const wristSchema = z.object({
   equipped: z.boolean(),
   name: z.string(),
   icon: z.string(),
+  enchant_id: z.string().optional(),
   quality: z.number(),
   itemClass: z.number(),
   itemSubClass: z.number(),
@@ -353,6 +363,7 @@ const handSchema = z.object({
   context: z.string(),
   equipped: z.boolean(),
   name: z.string(),
+    enchant_id: z.string().optional(),
   icon: z.string(),
   quality: z.number(),
   itemClass: z.number(),
@@ -373,11 +384,11 @@ const handSchema = z.object({
 const legSchema = z.object({
   id: z.number(),
   bonus_id: z.string(),
-  enchant_id: z.string(),
   context: z.string(),
   equipped: z.boolean(),
   name: z.string(),
   icon: z.string(),
+  enchant_id: z.string().optional(),
   quality: z.number(),
   itemClass: z.number(),
   itemSubClass: z.number(),
@@ -401,6 +412,7 @@ const offHandSchema = z.object({
   icon: z.string(),
   quality: z.number(),
   itemClass: z.number(),
+  enchant_id: z.string().optional(),
   itemSubClass: z.number(),
   inventoryType: z.number(),
   itemLevel: z.number(),
@@ -423,6 +435,7 @@ const trinketSchema = z.object({
   icon: z.string(),
   quality: z.number(),
   itemClass: z.number(),
+  enchant_id: z.string().optional(),
   itemSubClass: z.number(),
   inventoryType: z.number(),
   itemLevel: z.number(),
@@ -467,5 +480,6 @@ const gearStatsSchema = z.object({
 export const gearOutputSchema = z.object({
   simcInput: z.string(),
   gearInfo: gearSchema,
-  gearStats: gearStatsSchema
+  gearStats: gearStatsSchema,
+  simcOutput: z.string(),
 });

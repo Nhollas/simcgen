@@ -25,3 +25,7 @@ export function createTooltipUrl(item: any, setPieces?: number[]) {
 export function createGemTooltipUrl(gem: any) {
   return `https://www.wowhead.com/item=${gem.itemId}?crafting-quality=6`
 }
+
+export function createEnchantTooltipUrl(enchant: any) {
+  return `https://www.wowhead.com/item=${enchant.itemId}?crafting-quality=6`
+}

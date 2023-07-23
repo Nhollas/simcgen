@@ -25,7 +25,7 @@ export async function POST(
       }
     );
 
-    console.log("gear", response.data)
+    console.log("gear", JSON.stringify(response.data))
 
     return NextResponse.json(response.data);
 

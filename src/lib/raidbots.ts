@@ -132,8 +132,8 @@ export function qualityTypeToColour(qualityType: number) {
   };
 
   const qualityTypeMap: QualityTypeMap = {
-    1: "##ffffff",
-    2: "##1eff00",
+    1: "#ffffff",
+    2: "#1eff00",
     3: "#0070dd",
     4: "#a335ee",
     5: "#ff8000",
@@ -144,7 +144,7 @@ export function qualityTypeToColour(qualityType: number) {
   const result = qualityTypeMap[qualityType];
 
   if (!result) {
-    return "#ffffff";
+    return "#0000";
   } else {
     return result;
   }
