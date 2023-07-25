@@ -468,18 +468,12 @@ const gearSchema = z.object({
   trinkets: z.array(trinketSchema),
 });
 
-const gearStatsSchema = z.object({
-  id: z.number(),
-  bonus_id: z.array(z.number()),
-  enchant_id: z.number().optional(),
-  context: z.number().optional(),
-  gem_id: z.string().optional(),
-  crafted_stats: z.number().optional()
-})
+const characterInfoSchema = z.object({
+});
 
 export const gearOutputSchema = z.object({
   simcInput: z.string(),
   gearInfo: gearSchema,
-  gearStats: gearStatsSchema,
+  characterInfo: characterInfoSchema,
   simcOutput: z.string(),
 });

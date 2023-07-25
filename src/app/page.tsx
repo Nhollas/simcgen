@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import axios, { AxiosResponse } from "axios";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import Script from "next/script";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
@@ -43,13 +43,18 @@ import {
 } from "@/components/ui/command";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Label } from "@/components/ui/label";
-import { qualityTypeToColour, raidbotsQueryParamAdapter } from "@/lib/raidbots";
-import { extractGearFromInput } from "@/lib/simc";
+import { qualityTypeToColour } from "@/lib/raidbots";
+import {
+  createQueryParamsFromInput,
+  extractCharacterInfoFromInput,
+  extractGearFromInput,
+} from "@/lib/simc";
 import {
   GetItemInfoResponse,
   GetItemInfoRequest,
 } from "@/types/contracts/GetItemInfo";
 import { GemSchema, gearOutputSchema } from "@/types/schemas/GearOutputSchema";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   type Schema = z.infer<typeof gearOutputSchema>;
@@ -58,23 +63,24 @@ export default function Home() {
     resolver: zodResolver(gearOutputSchema),
     defaultValues: {
       gearInfo: undefined,
-      gearStats: undefined,
       simcInput: localStorage.getItem("simcInput") || "",
       simcOutput: undefined,
     },
   });
 
-  const [simcInput, gearInfo, gearStats, simcOutput] = form.watch([
+  const { watch, setValue } = form;
+
+  const [simcInput, gearInfo, simcOutput, characterInfo] = watch([
     "simcInput",
     "gearInfo",
-    "gearStats",
     "simcOutput",
+    "characterInfo",
   ]);
 
-  console.log(simcOutput);
-
-  const fetchItemInfo = useCallback(
-    async (gear: any, params: URLSearchParams) => {
+  useEffect(() => {
+    let isMounted = true;
+  
+    async function fetchItemInfo(gear: any, params: URLSearchParams) {
       const response = await axios.post<
         string,
         AxiosResponse<GetItemInfoResponse>,
@@ -86,74 +92,32 @@ export default function Home() {
           params,
         }
       );
-
-      form.setValue("gearInfo", response.data);
-    },
-    [form]
-  );
-
-  function outputSimc(values: any) {
-    form.setValue("simcOutput", "test");
-  }
-
-  function createQueryParamsFromInput(simcInput: string) {
-    const lines: string[] = simcInput.split("\n");
-
-    const possibleClassLines = [
-      "deathknight=",
-      "demonhunter=",
-      "druid=",
-      "hunter=",
-      "mage=",
-      "monk=",
-      "paladin=",
-      "priest=",
-      "rogue=",
-      "shaman=",
-      "warlock=",
-      "warrior=",
-      "evoker=",
-    ];
-
-    const linesToKeep = [
-      "level=",
-      "race=",
-      "region=",
-      "server=",
-      "role=",
-      "professions=",
-      "spec=",
-      ...possibleClassLines,
-    ];
-
-    const filteredLines = lines.filter((line) => {
-      // Only keep line if it starts with a lineToKeep.
-      return linesToKeep.some((lineToKeep) => line.startsWith(lineToKeep));
-    });
-
-    const params = raidbotsQueryParamAdapter(filteredLines);
-
-    return params;
-  }
-
-  useEffect(() => {
-    if (simcInput) {
-      // Your input data here
-      const gear = extractGearFromInput(simcInput);
-
-      const queryParams = createQueryParamsFromInput(simcInput);
-
-      fetchItemInfo(gear, queryParams);
-
-      localStorage.setItem("simcInput", simcInput);
+  
+      if (isMounted) {
+        setValue("gearInfo", response.data);
+      }
     }
-  }, [simcInput, fetchItemInfo]);
+  
+    const gear = extractGearFromInput(simcInput);
+    const characterInfo = extractCharacterInfoFromInput(simcInput);
+  
+    setValue("characterInfo", characterInfo);
+  
+    const queryParams = createQueryParamsFromInput(simcInput);
+  
+    fetchItemInfo(gear, queryParams);
+  
+    localStorage.setItem("simcInput", simcInput);
+  
+    return () => {
+      isMounted = false;
+    };
+  }, [simcInput, setValue]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-3 md:p-6 w-full">
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(outputSimc)}
           className="flex flex-col items-center w-full justify-center space-y-8"
         >
           <Card className="h-full w-full overflow-scroll max-w-lg">
@@ -206,25 +170,25 @@ export default function Home() {
                           const inputValue =
                             // @ts-ignore
                             event.target.value.toLowerCase();
+
+                          form.setValue("simcOutput", inputValue);
                         }}
                       />
                       <CommandEmpty>No Items Found.</CommandEmpty>
                       <CommandGroup>
-                        <ScrollArea className="h-72"></ScrollArea>
+                        <ScrollArea className="h-72">
+                        </ScrollArea>
                       </CommandGroup>
                     </Command>
                   </PopoverContent>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-y-6">
-                  <div className="bg-blue-800/75 p-2 rounded-lg sticky top-6 inset-x-10 z-10">
-
-                  <PopoverTrigger
-                    asChild
-                    className="w-full"
-                  >
-                    <Button>Add Item</Button>
-                                    
-                  </PopoverTrigger>
+                  <div className="sticky top-6 inset-x-0 z-50 flex justify-center">
+                    <div className=" max-w-lg bg-blue-800/75 p-2 rounded-lg w-full">
+                      <PopoverTrigger asChild className="w-full max-w-lg">
+                        <Button>Add Item</Button>
+                      </PopoverTrigger>
+                    </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8">
                     {Object.entries(gearInfo).map(([slot, items]) => {
@@ -297,7 +261,7 @@ function ItemPreview({ item }: { item: any }) {
           >
             {item.name}
           </h1>
-          {/* {item.equipped && (<Badge className="bg-yellow-500">Equipped</Badge>)} */}
+          {item.equipped && (<Badge className="bg-yellow-500">Equipped</Badge>)}
         </div>
         <div className="flex flex-row gap-x-2 items-center">
           <p className="text-sm leading-3 flex-shrink-0">{item.itemLevel}</p>
@@ -380,17 +344,17 @@ function EnchantmentPreview({ enchantmentId }: { enchantmentId: string }) {
       >
         <Link
           className="h-5 w-5 overflow-hidden relative rounded-md"
-          href={`https://www.wowhead.com/item=${enchantment?.itemId}`}
+          href={`https://www.wowhead.com/item=${enchantment.itemId}`}
         >
           <Image
-            src={`https://www.raidbots.com/static/images/icons/56/${enchantment?.itemIcon}.png`}
+            src={`https://www.raidbots.com/static/images/icons/56/${enchantment.itemIcon}.png`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt={enchantment.displayName}
           />
           {enchantment?.craftingQuality && (
             <Image
-              src={`https://www.raidbots.com/images/crafting-quality-${enchantment?.craftingQuality}.png`}
+              src={`https://www.raidbots.com/images/crafting-quality-${enchantment.craftingQuality}.png`}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="Crafting Quality"

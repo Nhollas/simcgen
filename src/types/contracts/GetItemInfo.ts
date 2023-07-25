@@ -1,139 +1,33 @@
 export interface GetItemInfoRequest {
   gear: Gear
 }
-
-export interface Gear {
-  head: HeadItem[]
-  neck: NeckItem[]
-  shoulder: ShoulderItem[]
-  back: BackItem[]
-  chest: ChestItem[]
-  wrist: WristItem[]
-  hands: HandItem[]
-  waist: WaistItem[]
-  legs: LegItem[]
-  feet: FootItem[]
-  main_hand: MainHandItem[]
-  off_hand: OffHandItem[]
-  unknown: UnknownItem[]
-  rings: RingItem[]
-  trinkets: TrinketItem[]
+interface Item {
+  id: string;
+  bonus_id: string;
+  gem_id?: string;
+  enchant_id?: string;
+  context: string;
+  crafted_stats?: string;
+  equipped: boolean;
 }
 
-export interface HeadItem {
-  id: string
-  bonus_id: string
-  gem_id: string
-  context: string
-  equipped: boolean
+interface Gear {
+  head: Item[];
+  neck: Item[];
+  shoulder: Item[];
+  back: Item[];
+  chest: Item[];
+  wrist: Item[];
+  hands: Item[];
+  waist: Item[];
+  legs: Item[];
+  feet: Item[];
+  main_hand: Item[];
+  off_hand: Item[];
+  unknown: Item[];
+  rings: Item[];
+  trinkets: Item[];
 }
-
-export interface OffHandItem {
-
-}
-
-export interface UnknownItem {
-}
-
-export interface NeckItem {
-  id: string
-  bonus_id: string
-  gem_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface ShoulderItem {
-  id: string
-  bonus_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface BackItem {
-  id: string
-  bonus_id: string
-  enchant_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface ChestItem {
-  id: string
-  bonus_id: string
-  enchant_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface WristItem {
-  id: string
-  bonus_id: string
-  gem_id: string
-  enchant_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface HandItem {
-  id: string
-  bonus_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface WaistItem {
-  id: string
-  bonus_id: string
-  gem_id: string
-  enchant_id: string
-  context: string
-  crafted_stats: string
-  equipped: boolean
-}
-
-export interface LegItem {
-  id: string
-  bonus_id: string
-  enchant_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface FootItem {
-  id: string
-  bonus_id: string
-  enchant_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface MainHandItem {
-  id: string
-  bonus_id: string
-  enchant_id: string
-  context: string
-  equipped: boolean
-}
-
-export interface RingItem {
-  id: string
-  bonus_id: string
-  gem_id: string
-  enchant_id: string
-  context: string
-  crafted_stats: string
-  equipped: boolean
-}
-
-export interface TrinketItem {
-  id: string
-  bonus_id: string
-  context: string
-  equipped: boolean
-}
-
-
 
 export interface GetItemInfoResponse {
   head: Head[];

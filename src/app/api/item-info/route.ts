@@ -6,11 +6,9 @@ export async function POST(
   request: NextRequest
 ) {  
 
-  const body = await request.json();
+  const body = await request.json() as GetItemInfoRequest;
 
-  const { searchParams } = new URL(request.url)
-
-  console.log("body", body)
+  const { searchParams } = new URL(request.url);
 
   try {
     const response = await axios.post<
@@ -25,13 +23,9 @@ export async function POST(
       }
     );
 
-    console.log("gear", JSON.stringify(response.data))
-
     return NextResponse.json(response.data);
 
   } catch (error) {
-    console.log("error", error)
-
     return NextResponse.error();
   }
 }

@@ -1,3 +1,70 @@
+
+const specIdMap = {
+  enhancement: 263,
+  mistweaver: 270,
+  protection: 73,
+  survival: 255,
+  discipline: 256,
+  brewmaster: 268,
+  fury: 72,
+  unholy: 252,
+  assassination: 259,
+  restoration: 105,
+  frost: 251,
+  arcane: 62,
+  holy: 257,
+  retribution: 70,
+  arms: 71,
+  beast_mastery: 253,
+  marksmanship: 254,
+  shadow: 258,
+  subtlety: 261,
+  feral: 103,
+  guardian: 104,
+  destruction: 267,
+  fire: 63,
+  blood: 250,
+  outlaw: 260,
+  elemental: 262,
+  affliction: 265,
+  demonology: 266,
+  windwalker: 269,
+  balance: 102,
+  havoc: 577,
+  vengeance: 581,
+  devastation: 1467,
+  preservation: 1468,
+  augmentation: 1473,
+};
+
+const classIdMap = {
+  hunter: 3,
+  warlock: 9,
+  druid: 11,
+  mage: 8,
+  deathknight: 6,
+  demonhunter: 12,
+  monk: 10,
+  priest: 5,
+  paladin: 2,
+  rogue: 4,
+  shaman: 7,
+  warrior: 1,
+  evoker: 13,
+};
+
+export type classKey = keyof typeof classIdMap;
+
+export type specKey = keyof typeof specIdMap;
+
+export function specToId(specName: keyof typeof specIdMap) {
+  return specIdMap[specName];
+}
+
+export function classToId(className: keyof typeof classIdMap) {
+  return classIdMap[className];
+}
+
 export function raidbotsQueryParamAdapter(
   filteredLines: string[]
 ): URLSearchParams {
@@ -18,71 +85,6 @@ export function raidbotsQueryParamAdapter(
     "warrior",
     "evoker",
   ];
-
-  function specToId(specName: keyof typeof specIdMap) {
-    const specIdMap = {
-      enhancement: 263,
-      mistweaver: 270,
-      protection: 73,
-      survival: 255,
-      discipline: 256,
-      brewmaster: 268,
-      fury: 72,
-      unholy: 252,
-      assassination: 259,
-      restoration: 105,
-      frost: 251,
-      arcane: 62,
-      holy: 257,
-      retribution: 70,
-      arms: 71,
-      beast_mastery: 253,
-      marksmanship: 254,
-      shadow: 258,
-      subtlety: 261,
-      feral: 103,
-      guardian: 104,
-      destruction: 267,
-      fire: 63,
-      blood: 250,
-      outlaw: 260,
-      elemental: 262,
-      affliction: 265,
-      demonology: 266,
-      windwalker: 269,
-      balance: 102,
-      havoc: 577,
-      vengeance: 581,
-      devastation: 1467,
-      preservation: 1468,
-      augmentation: 1473,
-    };
-    const specIdResult = specIdMap[specName];
-
-    console.log("specIdResult", specIdResult);
-
-    return specIdResult;
-  }
-
-  function classToId(className: keyof typeof classIdMap) {
-    const classIdMap = {
-      hunter: 3,
-      warlock: 9,
-      druid: 11,
-      mage: 8,
-      deathknight: 6,
-      demonhunter: 12,
-      monk: 10,
-      priest: 5,
-      paladin: 2,
-      rogue: 4,
-      shaman: 7,
-      warrior: 1,
-      evoker: 13,
-    };
-
-    return classIdMap[className];
-  }
 
   const queryParams = filteredLines.reduce((acc, line) => {
     const [key, value] = line.split("=");
@@ -145,7 +147,7 @@ export function qualityTypeToColour(qualityType: number) {
 
   if (!result) {
     return "#0000";
-  } else {
-    return result;
   }
+
+  return result;
 }
