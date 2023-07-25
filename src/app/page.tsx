@@ -46,6 +46,7 @@ import { Label } from "@/components/ui/label";
 import { qualityTypeToColour } from "@/lib/raidbots";
 import {
   createQueryParamsFromInput,
+  createSimcOutputFromInfo,
   extractCharacterInfoFromInput,
   extractGearFromInput,
 } from "@/lib/simc";
@@ -53,33 +54,31 @@ import {
   GetItemInfoResponse,
   GetItemInfoRequest,
 } from "@/types/contracts/GetItemInfo";
-import { GemSchema, gearOutputSchema } from "@/types/schemas/GearOutputSchema";
+import {
+  GearOutputSchema,
+  GemSchema,
+  gearOutputSchema,
+} from "@/types/schemas/GearOutputSchema";
 import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
-  type Schema = z.infer<typeof gearOutputSchema>;
-
-  const form = useForm<Schema>({
+  const form = useForm<GearOutputSchema>({
     resolver: zodResolver(gearOutputSchema),
     defaultValues: {
       gearInfo: undefined,
       simcInput: localStorage.getItem("simcInput") || "",
-      simcOutput: undefined,
     },
   });
 
-  const { watch, setValue } = form;
+  const { watch, setValue, formState } = form;
 
-  const [simcInput, gearInfo, simcOutput, characterInfo] = watch([
-    "simcInput",
-    "gearInfo",
-    "simcOutput",
-    "characterInfo",
-  ]);
+  console.log(formState.errors);
+
+  const [simcInput, gearInfo] = watch(["simcInput", "gearInfo"]);
 
   useEffect(() => {
     let isMounted = true;
-  
+
     async function fetchItemInfo(gear: any, params: URLSearchParams) {
       const response = await axios.post<
         string,
@@ -92,35 +91,44 @@ export default function Home() {
           params,
         }
       );
-  
+
       if (isMounted) {
         setValue("gearInfo", response.data);
       }
     }
-  
+
     const gear = extractGearFromInput(simcInput);
-    const characterInfo = extractCharacterInfoFromInput(simcInput);
-  
+    const characterInfo = extractCharacterInfoFromInput(simcInput) as any;
+
     setValue("characterInfo", characterInfo);
-  
+
     const queryParams = createQueryParamsFromInput(simcInput);
-  
+
     fetchItemInfo(gear, queryParams);
-  
+
     localStorage.setItem("simcInput", simcInput);
-  
+
     return () => {
       isMounted = false;
     };
   }, [simcInput, setValue]);
 
+  function handleSubmitTest(values: GearOutputSchema) {
+    console.log("data", values);
+
+    const simcExport = createSimcOutputFromInfo(values);
+
+    console.log("simcExport", simcExport);
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-3 md:p-6 w-full">
       <Form {...form}>
         <form
+          onSubmit={form.handleSubmit(handleSubmitTest)}
           className="flex flex-col items-center w-full justify-center space-y-8"
         >
-          <Card className="h-full w-full overflow-scroll max-w-lg">
+          <Card className="h-full w-full overflow-scroll max-w-3xl">
             <CardHeader>
               <CardTitle>Simulation Craft Input</CardTitle>
               <CardDescription className="flex flex-col gap-y-2 w-full">
@@ -170,14 +178,11 @@ export default function Home() {
                           const inputValue =
                             // @ts-ignore
                             event.target.value.toLowerCase();
-
-                          form.setValue("simcOutput", inputValue);
                         }}
                       />
                       <CommandEmpty>No Items Found.</CommandEmpty>
                       <CommandGroup>
-                        <ScrollArea className="h-72">
-                        </ScrollArea>
+                        <ScrollArea className="h-72"></ScrollArea>
                       </CommandGroup>
                     </Command>
                   </PopoverContent>
@@ -220,9 +225,6 @@ export default function Home() {
           )}
         </form>
       </Form>
-      {simcOutput && (
-        <Card className="h-full w-full overflow-scroll">{simcOutput}</Card>
-      )}
       <Script src="https://wow.zamimg.com/js/tooltips.js" />
       <Script src="/scripts/wowheadTooltip.js" />
     </main>
@@ -261,7 +263,7 @@ function ItemPreview({ item }: { item: any }) {
           >
             {item.name}
           </h1>
-          {item.equipped && (<Badge className="bg-yellow-500">Equipped</Badge>)}
+          {item.equipped && <Badge className="bg-yellow-500">Equipped</Badge>}
         </div>
         <div className="flex flex-row gap-x-2 items-center">
           <p className="text-sm leading-3 flex-shrink-0">{item.itemLevel}</p>

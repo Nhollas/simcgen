@@ -6,6 +6,11 @@ const statSchema = z.object({
   alloc: z.number(),
 });
 
+const gemStatSchema = z.object({
+  type: z.string(),
+  amount: z.number(),
+});
+
 const sourceSchema = z.object({
   instanceId: z.number(),
   encounterId: z.number(),
@@ -31,7 +36,7 @@ const gemSchema = z.object({
   craftingQuality: z.number(),
   tokenizedName: z.string(),
   socketType: z.number(),
-  stats: z.array(statSchema),
+  stats: z.array(gemStatSchema),
   key: z.string(),
   name: z.string(),
   type: z.string(),
@@ -66,17 +71,21 @@ const amountSchema = z.object({
   itemId: z.number().optional(),
 });
 
-const optionalCraftingSlotSchema = z.object({
-  id: z.number(),
-  count: z.number(),
-  recraftCount: z.number(),
-});
+const optionalCraftingSlotSchema = z
+  .object({
+    id: z.number(),
+    count: z.number(),
+    recraftCount: z.number(),
+  })
+  .optional();
 
-const itemLimitSchema = z.object({
-  category: z.number(),
-  quantity: z.number(),
-  name: z.string(),
-});
+const itemLimitSchema = z
+  .object({
+    category: z.number(),
+    quantity: z.number(),
+    name: z.string(),
+  })
+  .optional();
 
 const spellSchema = z.object({
   id: z.number(),
@@ -94,23 +103,43 @@ const costSchema = z.object({
   amounts: z.array(amountSchema),
 });
 
-const professionSchema = z.object({
-  id: z.number(),
-  recipeSpellId: z.number(),
-  optionalCraftingSlots: z.array(optionalCraftingSlotSchema),
-});
+const professionSchema = z
+  .object({
+    id: z.number(),
+    recipeSpellId: z.number(),
+    optionalCraftingSlots: z.array(optionalCraftingSlotSchema),
+  })
+  .optional();
 
-const effectSchema = z.object({
-  id: z.number(),
-  index: z.number(),
-  spell: spellSchema,
-});
+const effectSchema = z
+  .object({
+    id: z.number(),
+    index: z.number(),
+    spell: spellSchema,
+  })
+  .optional();
 
-const neckSchema = z.object({
+const upgradeSchema = z
+  .object({
+    level: z.number(),
+    max: z.number(),
+    group: z.number(),
+    name: z.string(),
+    costs: z.array(costSchema),
+    bonusId: z.number(),
+    itemLevel: z.number(),
+    highWatermarkDiscounts: z.array(highWatermarkDiscountSchema),
+    seasonId: z.number(),
+  })
+  .optional();
+
+export type ItemSchema = z.infer<typeof itemSchema>;
+
+const itemSchema = z.object({
   id: z.number(),
   bonus_id: z.string(),
+  enchant_id: z.string().optional(),
   context: z.string(),
-  crafted_stats: z.string(),
   equipped: z.boolean(),
   name: z.string(),
   icon: z.string(),
@@ -119,361 +148,50 @@ const neckSchema = z.object({
   itemSubClass: z.number(),
   inventoryType: z.number(),
   itemLevel: z.number(),
-  socketInfo: socketInfoSchema,
   stats: z.array(statSchema),
   bonusLists: z.array(z.number()),
   sources: z.array(sourceSchema),
-  profession: professionSchema,
   expansion: z.number(),
   baseItemLevel: z.number(),
-  enchant_id: z.string().optional(),
-});
-
-const waistSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  crafted_stats: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  enchant_id: z.string().optional(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  profession: professionSchema,
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  effects: z.array(effectSchema),
   socketInfo: socketInfoSchema,
+  upgrade: upgradeSchema,
+  profession: professionSchema,
   itemLimit: itemLimitSchema,
-});
-
-const footSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  crafted_stats: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  enchant_id: z.string().optional(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  profession: professionSchema,
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  effects: z.array(effectSchema),
-  socketInfo: socketInfoSchema,
-  itemLimit: itemLimitSchema,
-});
-
-const mainHandSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  enchant_id: z.string().optional(),
-  context: z.string(),
-  crafted_stats: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  profession: professionSchema,
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  effects: z.array(effectSchema),
-  socketInfo: socketInfoSchema,
-  guid: z.string(),
-});
-
-const ringSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  enchant_id: z.string().optional(),
-  gem_id: z.string(),
-  context: z.string(),
-  crafted_stats: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  uniqueEquipped: z.boolean(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  profession: professionSchema,
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-});
-
-const upgradeSchema = z.object({
-  level: z.number(),
-  max: z.number(),
-  group: z.number(),
-  name: z.string(),
-  costs: z.array(costSchema),
-  bonusId: z.number(),
-  itemLevel: z.number(),
-  highWatermarkDiscounts: z.array(highWatermarkDiscountSchema),
-  seasonId: z.number(),
-});
-
-const headSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  itemSetId: z.number(),
-  allowableClasses: z.array(z.number()),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  enchant_id: z.string().optional(),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-});
-
-const shoulderSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  itemSetId: z.number(),
-  allowableClasses: z.array(z.number()),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  enchant_id: z.string().optional(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-});
-
-const backSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  enchant_id: z.string().optional(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-});
-
-const chestSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  enchant_id: z.string().optional(),
-  itemSetId: z.number(),
-  allowableClasses: z.array(z.number()),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-});
-
-const wristSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  enchant_id: z.string().optional(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-});
-
-const handSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-    enchant_id: z.string().optional(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  itemSetId: z.number(),
-  allowableClasses: z.array(z.number()),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-});
-
-const legSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  enchant_id: z.string().optional(),
-  quality: z.number(),
-  itemClass: z.number(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-});
-
-const offHandSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  enchant_id: z.string().optional(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-  guid: z.string(),
-});
-
-const trinketSchema = z.object({
-  id: z.number(),
-  bonus_id: z.string(),
-  context: z.string(),
-  equipped: z.boolean(),
-  name: z.string(),
-  icon: z.string(),
-  quality: z.number(),
-  itemClass: z.number(),
-  enchant_id: z.string().optional(),
-  itemSubClass: z.number(),
-  inventoryType: z.number(),
-  itemLevel: z.number(),
-  uniqueEquipped: z.boolean(),
-  specs: z.array(z.number()).optional(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
-  expansion: z.number(),
-  baseItemLevel: z.number(),
-  socketInfo: socketInfoSchema,
-  upgrade: upgradeSchema,
-  onUseTrinket: z.boolean().optional(),
 });
 
 const gearSchema = z.object({
-  head: z.array(headSchema),
-  neck: z.array(neckSchema),
-  shoulder: z.array(shoulderSchema),
-  back: z.array(backSchema),
-  chest: z.array(chestSchema),
-  wrist: z.array(wristSchema),
-  hands: z.array(handSchema),
-  waist: z.array(waistSchema),
-  legs: z.array(legSchema),
-  feet: z.array(footSchema),
-  main_hand: z.array(mainHandSchema),
-  off_hand: z.array(offHandSchema),
-  rings: z.array(ringSchema),
-  trinkets: z.array(trinketSchema),
+  head: z.array(itemSchema),
+  neck: z.array(itemSchema),
+  shoulder: z.array(itemSchema),
+  back: z.array(itemSchema),
+  chest: z.array(itemSchema),
+  wrist: z.array(itemSchema),
+  hands: z.array(itemSchema),
+  waist: z.array(itemSchema),
+  legs: z.array(itemSchema),
+  feet: z.array(itemSchema),
+  main_hand: z.array(itemSchema),
+  off_hand: z.array(itemSchema).optional(),
+  rings: z.array(itemSchema),
+  trinkets: z.array(itemSchema),
 });
 
 const characterInfoSchema = z.object({
+  level: z.string(),
+  race: z.string(),
+  region: z.string(),
+  server: z.string(),
+  role: z.string(),
+  specId: z.number(),
+  classId: z.number(),
+  talents: z.string(),
+  name: z.string(),
 });
+
+export type GearOutputSchema = z.infer<typeof gearOutputSchema>;
 
 export const gearOutputSchema = z.object({
   simcInput: z.string(),
   gearInfo: gearSchema,
   characterInfo: characterInfoSchema,
-  simcOutput: z.string(),
 });

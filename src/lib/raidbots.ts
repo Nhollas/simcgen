@@ -1,4 +1,3 @@
-
 const specIdMap = {
   enhancement: 263,
   mistweaver: 270,
@@ -59,6 +58,22 @@ export type specKey = keyof typeof specIdMap;
 
 export function specToId(specName: keyof typeof specIdMap) {
   return specIdMap[specName];
+}
+
+export function specIdToName(specId: number) {
+  const specIdMapReverse = Object.fromEntries(
+    Object.entries(specIdMap).map(([key, value]) => [value, key])
+  );
+
+  return specIdMapReverse[specId];
+}
+
+export function classIdToName(classId: number) {
+  const classIdMapReverse = Object.fromEntries(
+    Object.entries(classIdMap).map(([key, value]) => [value, key])
+  );
+
+  return classIdMapReverse[classId];
 }
 
 export function classToId(className: keyof typeof classIdMap) {
@@ -127,7 +142,6 @@ export function raidbotsQueryParamAdapter(
   return new URLSearchParams(finalRaidbotsParams);
 }
 
-
 export function qualityTypeToColour(qualityType: number) {
   type QualityTypeMap = {
     [key: number]: string;
@@ -142,7 +156,7 @@ export function qualityTypeToColour(qualityType: number) {
     6: "#e6cc80",
     7: "#00ccff",
   };
-  
+
   const result = qualityTypeMap[qualityType];
 
   if (!result) {

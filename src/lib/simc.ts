@@ -1,4 +1,14 @@
-import { classKey, classToId, raidbotsQueryParamAdapter, specKey, specToId } from "./raidbots";
+import { z } from "zod";
+import {
+  classIdToName,
+  classKey,
+  classToId,
+  raidbotsQueryParamAdapter,
+  specIdToName,
+  specKey,
+  specToId,
+} from "./raidbots";
+import { GearOutputSchema, ItemSchema } from "@/types/schemas/GearOutputSchema";
 
 const possibleClassLines = [
   "deathknight=",
@@ -132,6 +142,7 @@ export function extractCharacterInfoFromInput(simcInput: string) {
     "server=",
     "role=",
     "spec=",
+    "talents=",
     ...possibleClassLines,
   ];
 
@@ -147,6 +158,7 @@ export function extractCharacterInfoFromInput(simcInput: string) {
     "server",
     "role",
     "spec",
+    "talents",
   ];
 
   const characterInfo: Record<string, any> = {};
@@ -193,4 +205,86 @@ export function createQueryParamsFromInput(simcInput: string) {
   const params = raidbotsQueryParamAdapter(filteredLines);
 
   return params;
+}
+
+function generateGearLine(item: ItemSchema) {
+  const { id, bonus_id, enchant_id, context, socketInfo } = item;
+
+  let attributes: string[] = [];
+
+  attributes.push(`id=${id}`);
+  attributes.push(`bonus_id=${bonus_id}`);
+  attributes.push(`context=${context}`);
+
+  console.log(socketInfo);
+
+  //gem_id=192961/192961/192961
+  if ("PRISMATIC" in socketInfo && socketInfo.PRISMATIC) {
+    const { PRISMATIC } = socketInfo;
+
+    const gemIds = PRISMATIC.gems.map((gem) => gem.itemId).join("/");
+
+    attributes.push(`gem_id=${gemIds}`);
+  }
+
+  if (enchant_id) {
+    attributes.push(`enchant_id=${enchant_id}`);
+  }
+
+  return attributes.join(",");
+}
+
+export function createSimcOutputFromInfo(values: GearOutputSchema): string {
+  let lines: string[] = [];
+
+  lines.push(
+    "# Raidbots-generated SimC input...SIKE! This is from the devs @ simcgen.com"
+  );
+  lines.push("");
+
+  const className = classIdToName(values.characterInfo["classId"]);
+  // This needs to be first.
+  lines.push(`${className}=${values.characterInfo["name"]}`);
+
+  for (const key in values.characterInfo) {
+    if (key === "specId") {
+      const specName = specIdToName(values.characterInfo[key]);
+
+      lines.push(`spec=${specName}`);
+    } else if (key === "name" || key === "classId") {
+      // Do nothing
+    } else {
+      lines.push(`${key}=${values.characterInfo[key]}`);
+    }
+  }
+
+  // Push empty line.
+  lines.push("");
+
+  for (const key in values.gearInfo) {
+    let trinket = false;
+    let ring = false;
+
+    for (const item of values.gearInfo[key]) {
+      if (key === "trinkets") {
+        if (!trinket) {
+          lines.push(`trinket1=,${generateGearLine(item)}`);
+          trinket = true;
+        } else {
+          lines.push(`trinket2=,${generateGearLine(item)}`);
+        }
+      } else if (key === "rings") {
+        if (!ring) {
+          lines.push(`finger1=,${generateGearLine(item)}`);
+          ring = true;
+        } else {
+          lines.push(`finger2=,${generateGearLine(item)}`);
+        }
+      } else {
+        lines.push(`${key}=,${generateGearLine(item)}`);
+      }
+    }
+  }
+
+  return lines.join("\n");
 }
