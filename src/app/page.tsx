@@ -68,7 +68,10 @@ export default function Home() {
     resolver: zodResolver(gearOutputSchema),
     defaultValues: {
       gearInfo: undefined,
-      simcInput: localStorage?.getItem("simcInput") || "",
+      simcInput:
+        typeof window !== "undefined"
+          ? localStorage.getItem("simcInput") || ""
+          : "",
       characterInfo: undefined,
     },
   });
@@ -80,10 +83,6 @@ export default function Home() {
 
   const [simcInput, gearInfo] = watch(["simcInput", "gearInfo"]);
 
-  console.log("searchedItems", searchedItems);
-
-  console.log("formstate", formState.errors);
-
   useEffect(() => {
     let isMounted = true;
 
@@ -93,7 +92,7 @@ export default function Home() {
         AxiosResponse<GetItemInfoResponse>,
         GetItemInfoRequest
       >(
-        "http://localhost:3000/api/item-info",
+        "/api/item-info",
         { gear },
         {
           params,
@@ -101,7 +100,7 @@ export default function Home() {
       );
 
       if (isMounted) {
-        console.log("response", response.data);
+        // @ts-ignore
         setValue("gearInfo", response.data);
       }
     }
@@ -115,7 +114,8 @@ export default function Home() {
 
     fetchItemInfo(gear, queryParams);
 
-    localStorage.setItem("simcInput", simcInput);
+    typeof window !== "undefined" &&
+      localStorage.setItem("simcInput", simcInput);
 
     return () => {
       isMounted = false;
@@ -123,11 +123,7 @@ export default function Home() {
   }, [simcInput, setValue]);
 
   function handleSubmitTest(values: GearOutputSchema) {
-    console.log("data", values);
-
     const simcExport = createSimcOutputFromInfo(values);
-
-    console.log("simcExport", simcExport);
 
     // Make the user copy the output
     navigator.clipboard.writeText(simcExport);
@@ -209,21 +205,18 @@ export default function Home() {
                                 // @ts-ignore
                                 event.target.value.toLowerCase();
 
-                              console.log("inputValue", inputValue);
-
                               if (inputValue === "") {
                                 setSearchedItems([]);
                                 return;
                               }
 
                               axios
-                                .get("http://localhost:3000/api/items", {
+                                .get("/api/items", {
                                   params: {
                                     query: inputValue,
                                   },
                                 })
                                 .then((response) => {
-                                  console.log("response", response);
                                   setSearchedItems(response.data);
                                 })
                                 .finally(() => {});
@@ -238,7 +231,6 @@ export default function Home() {
                                   key={item.unique_id}
                                   value={`${item.name}_${item.unique_id}`}
                                   onSelect={(item) => {
-                                    console.log("item", item);
                                     const itemId = item.split("_")[1];
 
                                     const selectedItem = searchedItems.find(
@@ -249,18 +241,17 @@ export default function Home() {
                                       return;
                                     }
 
-                                    console.log("selectedItem", selectedItem);
-
                                     const slot = inventoryTypeToSlot(
                                       selectedItem.inventoryType
                                     );
 
-                                    console.log("slot", slot);
-
+                                    // @ts-ignore
                                     if (form.getValues(`gearInfo.${slot}`)) {
                                       const existingItem = form
+                                        // @ts-ignore
                                         .getValues(`gearInfo.${slot}`)
                                         .find(
+                                          // @ts-ignore
                                           (item) =>
                                             item.unique_id ===
                                             selectedItem.unique_id
@@ -271,7 +262,9 @@ export default function Home() {
                                       }
                                     }
 
+                                    // @ts-ignore
                                     form.setValue(`gearInfo.${slot}`, [
+                                      // @ts-ignore
                                       ...gearInfo[slot],
                                       selectedItem,
                                     ]);

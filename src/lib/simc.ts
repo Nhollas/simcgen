@@ -256,6 +256,7 @@ export function createSimcOutputFromInfo(values: GearOutputSchema): string {
     } else if (key === "name" || key === "classId") {
       // Do nothing
     } else {
+      // @ts-ignore
       lines.push(`${key}=${values.characterInfo[key]}`);
     }
   }
@@ -267,6 +268,7 @@ export function createSimcOutputFromInfo(values: GearOutputSchema): string {
     let trinket = false;
     let ring = false;
 
+    // @ts-ignore
     for (const item of values.gearInfo[key]) {
       let base = "#";
 
