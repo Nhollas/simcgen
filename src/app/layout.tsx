@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="flex justify-center items-center">{children}</body>
+      <body className="flex justify-center items-center">
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

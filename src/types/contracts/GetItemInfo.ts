@@ -1,5 +1,5 @@
 export interface GetItemInfoRequest {
-  gear: Gear
+  gear: Gear;
 }
 interface Item {
   id: string;
@@ -80,7 +80,7 @@ interface Source {
 }
 
 interface SocketInfo {
-    PRISMATIC?: Prismatic;
+  PRISMATIC?: Prismatic;
 }
 
 interface Upgrade {
@@ -201,9 +201,8 @@ interface Back {
   expansion: number;
   baseItemLevel: number;
   socketInfo: SocketInfo;
-  upgrade: Upgrade
+  upgrade: Upgrade;
 }
-
 
 interface Chest {
   id: number;
@@ -271,7 +270,6 @@ interface Hand {
   socketInfo: SocketInfo;
   upgrade: Upgrade;
 }
-
 
 interface Waist {
   id: number;

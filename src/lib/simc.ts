@@ -214,9 +214,6 @@ function generateGearLine(item: ItemSchema) {
 
   attributes.push(`id=${id}`);
   attributes.push(`bonus_id=${bonus_id}`);
-  attributes.push(`context=${context}`);
-
-  console.log(socketInfo);
 
   //gem_id=192961/192961/192961
   if ("PRISMATIC" in socketInfo && socketInfo.PRISMATIC) {
@@ -231,6 +228,10 @@ function generateGearLine(item: ItemSchema) {
     attributes.push(`enchant_id=${enchant_id}`);
   }
 
+  if (context) {
+    attributes.push(`context=${context}`);
+  }
+
   return attributes.join(",");
 }
 
@@ -240,6 +241,7 @@ export function createSimcOutputFromInfo(values: GearOutputSchema): string {
   lines.push(
     "# Raidbots-generated SimC input...SIKE! This is from the devs @ simcgen.com"
   );
+
   lines.push("");
 
   const className = classIdToName(values.characterInfo["classId"]);
@@ -266,22 +268,28 @@ export function createSimcOutputFromInfo(values: GearOutputSchema): string {
     let ring = false;
 
     for (const item of values.gearInfo[key]) {
+      let base = "#";
+
+      if (item.equipped) {
+        base = "";
+      }
+
       if (key === "trinkets") {
         if (!trinket) {
-          lines.push(`trinket1=,${generateGearLine(item)}`);
+          lines.push(`${base}trinket1=,${generateGearLine(item)}`);
           trinket = true;
         } else {
-          lines.push(`trinket2=,${generateGearLine(item)}`);
+          lines.push(`${base}trinket2=,${generateGearLine(item)}`);
         }
       } else if (key === "rings") {
         if (!ring) {
-          lines.push(`finger1=,${generateGearLine(item)}`);
+          lines.push(`${base}finger1=,${generateGearLine(item)}`);
           ring = true;
         } else {
-          lines.push(`finger2=,${generateGearLine(item)}`);
+          lines.push(`${base}finger2=,${generateGearLine(item)}`);
         }
       } else {
-        lines.push(`${key}=,${generateGearLine(item)}`);
+        lines.push(`${base}${key}=,${generateGearLine(item)}`);
       }
     }
   }

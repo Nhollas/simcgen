@@ -93,7 +93,7 @@ const spellSchema = z.object({
   icon: z.string(),
 });
 
-const socketInfoSchema = z.object({
+export const socketInfoSchema = z.object({
   PRISMATIC: prismaticSchema.optional(),
 });
 
@@ -137,10 +137,11 @@ export type ItemSchema = z.infer<typeof itemSchema>;
 
 const itemSchema = z.object({
   id: z.number(),
-  bonus_id: z.string(),
+  unique_id: z.string(),
+  bonus_id: z.string().optional(),
   enchant_id: z.string().optional(),
-  context: z.string(),
-  equipped: z.boolean(),
+  context: z.string().optional(),
+  equipped: z.boolean().optional(),
   name: z.string(),
   icon: z.string(),
   quality: z.number(),
@@ -148,9 +149,9 @@ const itemSchema = z.object({
   itemSubClass: z.number(),
   inventoryType: z.number(),
   itemLevel: z.number(),
-  stats: z.array(statSchema),
-  bonusLists: z.array(z.number()),
-  sources: z.array(sourceSchema),
+  stats: z.array(statSchema).optional(),
+  bonusLists: z.array(z.number()).optional(),
+  sources: z.array(sourceSchema).optional(),
   expansion: z.number(),
   baseItemLevel: z.number(),
   socketInfo: socketInfoSchema,
@@ -158,6 +159,8 @@ const itemSchema = z.object({
   profession: professionSchema,
   itemLimit: itemLimitSchema,
 });
+
+export type GearSchema = z.infer<typeof gearSchema>;
 
 const gearSchema = z.object({
   head: z.array(itemSchema),

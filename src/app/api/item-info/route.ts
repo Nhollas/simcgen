@@ -1,6 +1,8 @@
-import { GetItemInfoRequest, GetItemInfoResponse } from '@/types/contracts/GetItemInfo';
+import { GetItemInfoRequest } from '@/types/contracts/GetItemInfo';
+import { GearSchema } from '@/types/schemas/GearOutputSchema';
 import axios, { AxiosResponse } from 'axios';
 import { NextResponse, type NextRequest } from 'next/server'
+import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(
   request: NextRequest
@@ -13,7 +15,7 @@ export async function POST(
   try {
     const response = await axios.post<
       string,
-      AxiosResponse<GetItemInfoResponse>,
+      AxiosResponse<GearSchema>,
       GetItemInfoRequest
     >(
       "https://www.raidbots.com/api/item-info",
@@ -22,6 +24,15 @@ export async function POST(
         params: searchParams,
       }
     );
+
+    const gearInfo = response.data;
+
+    // Add unique-id property to each item.
+    Object.entries(gearInfo).map(([slot, items]) => {
+      {items.map((item) => (
+        item["unique_id"] = uuidv4()
+      ))}
+    });
 
     return NextResponse.json(response.data);
 

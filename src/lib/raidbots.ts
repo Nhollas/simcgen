@@ -165,3 +165,48 @@ export function qualityTypeToColour(qualityType: number) {
 
   return result;
 }
+
+export function inventoryTypeToSlot(inventoryType: number) {
+  type InventoryTypeMap = {
+    [key: number]: string;
+  };
+
+  const inventoryTypeMap: InventoryTypeMap = {
+    1: "head",
+    2: "neck",
+    3: "shoulder",
+    4: "shirt",
+    5: "chest",
+    6: "waist",
+    7: "legs",
+    8: "feet",
+    9: "wrist",
+    10: "hands",
+    11: "finger",
+    12: "trinkets",
+    13: "weapon",
+    14: "shield",
+    15: "ranged",
+    16: "back",
+    17: "two-hand",
+    18: "bag",
+    19: "tabard",
+    20: "robe",
+    21: "main-hand",
+    22: "off-hand",
+    23: "held-in-off-hand",
+    24: "ammo",
+    25: "thrown",
+    26: "ranged-right",
+    27: "quiver",
+    28: "relic",
+  };
+
+  const result = inventoryTypeMap[inventoryType];
+
+  if (!result) {
+    return "unknown";
+  }
+
+  return result;
+}

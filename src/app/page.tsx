@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import axios, { AxiosResponse } from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
@@ -27,9 +27,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { X } from "lucide-react";
+import { ClipboardCopy, RocketIcon, X } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import {
   Popover,
   PopoverContent,
@@ -38,12 +37,12 @@ import {
 import {
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
+  CommandItem,
+  CommandList,
 } from "@/components/ui/command";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Label } from "@/components/ui/label";
-import { qualityTypeToColour } from "@/lib/raidbots";
+import { inventoryTypeToSlot, qualityTypeToColour } from "@/lib/raidbots";
 import {
   createQueryParamsFromInput,
   createSimcOutputFromInfo,
@@ -60,21 +59,30 @@ import {
   gearOutputSchema,
 } from "@/types/schemas/GearOutputSchema";
 import { Badge } from "@/components/ui/badge";
+import { ItemSchema } from "@/types/schemas/GetItemSchema";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { exampleInput } from "@/lib/utils";
 
 export default function Home() {
   const form = useForm<GearOutputSchema>({
     resolver: zodResolver(gearOutputSchema),
     defaultValues: {
       gearInfo: undefined,
-      simcInput: localStorage.getItem("simcInput") || "",
+      simcInput: localStorage?.getItem("simcInput") || "",
+      characterInfo: undefined,
     },
   });
 
+  const [searchedItems, setSearchedItems] = useState<ItemSchema[]>([]);
+  const [searchOpen, setSearchOpen] = useState(false);
+
   const { watch, setValue, formState } = form;
 
-  console.log(formState.errors);
-
   const [simcInput, gearInfo] = watch(["simcInput", "gearInfo"]);
+
+  console.log("searchedItems", searchedItems);
+
+  console.log("formstate", formState.errors);
 
   useEffect(() => {
     let isMounted = true;
@@ -93,6 +101,7 @@ export default function Home() {
       );
 
       if (isMounted) {
+        console.log("response", response.data);
         setValue("gearInfo", response.data);
       }
     }
@@ -119,6 +128,9 @@ export default function Home() {
     const simcExport = createSimcOutputFromInfo(values);
 
     console.log("simcExport", simcExport);
+
+    // Make the user copy the output
+    navigator.clipboard.writeText(simcExport);
   }
 
   return (
@@ -128,7 +140,7 @@ export default function Home() {
           onSubmit={form.handleSubmit(handleSubmitTest)}
           className="flex flex-col items-center w-full justify-center space-y-8"
         >
-          <Card className="h-full w-full overflow-scroll max-w-3xl">
+          <Card className="h-full w-full overflow-scroll max-w-3xl relative">
             <CardHeader>
               <CardTitle>Simulation Craft Input</CardTitle>
               <CardDescription className="flex flex-col gap-y-2 w-full">
@@ -139,6 +151,13 @@ export default function Home() {
                 >
                   How to install and use the SimC addon
                 </Link>
+                <Button
+                  className="self-end"
+                  type="button"
+                  onClick={() => form.setValue("simcInput", exampleInput)}
+                >
+                  Show Example
+                </Button>
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-y-4">
@@ -162,66 +181,147 @@ export default function Home() {
             </CardContent>
           </Card>
           {gearInfo && (
-            <Popover>
-              <Card className="h-full w-full relative">
-                <CardHeader>
-                  <CardTitle>Gear To Output</CardTitle>
-                  <CardDescription>
-                    Add the items you want and then export the gear as a simc
-                    output.
-                  </CardDescription>
-                  <PopoverContent className="p-0">
-                    <Command>
-                      <CommandInput
-                        placeholder="Search Item..."
-                        onChangeCapture={(event) => {
-                          const inputValue =
-                            // @ts-ignore
-                            event.target.value.toLowerCase();
-                        }}
-                      />
-                      <CommandEmpty>No Items Found.</CommandEmpty>
-                      <CommandGroup>
-                        <ScrollArea className="h-72"></ScrollArea>
-                      </CommandGroup>
-                    </Command>
-                  </PopoverContent>
-                </CardHeader>
-                <CardContent className="flex flex-col gap-y-6">
-                  <div className="sticky top-6 inset-x-0 z-50 flex justify-center">
-                    <div className=" max-w-lg bg-blue-800/75 p-2 rounded-lg w-full">
-                      <PopoverTrigger asChild className="w-full max-w-lg">
-                        <Button>Add Item</Button>
+            <Card className="h-full w-full relative">
+              <CardHeader>
+                <CardTitle>Gear To Output</CardTitle>
+                <CardDescription>
+                  Add the items you want and then export the gear as a simc
+                  output.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-y-6">
+                <div className="sticky top-6 inset-x-0 z-50 flex justify-center">
+                  <div className="max-w-lg bg-muted/75 p-2 rounded-lg w-full grid grid-cols-2 gap-4">
+                    <Popover open={searchOpen} onOpenChange={setSearchOpen}>
+                      <PopoverTrigger
+                        onClick={() => setSearchOpen(true)}
+                        asChild
+                        className="w-full max-w-lg"
+                      >
+                        <Button variant="outline">Add Item</Button>
                       </PopoverTrigger>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8">
-                    {Object.entries(gearInfo).map(([slot, items]) => {
-                      if (items.length === 0) {
-                        return null;
-                      }
+                      <PopoverContent className="p-0">
+                        <Command>
+                          <CommandInput
+                            placeholder="Search Item..."
+                            onChangeCapture={(event) => {
+                              const inputValue =
+                                // @ts-ignore
+                                event.target.value.toLowerCase();
 
-                      return (
-                        <section
-                          className="space-y-6 rounded-lg w-full"
-                          key={slot}
-                        >
-                          <Label className="text-xl uppercase font-semibold">
-                            {slot}
-                          </Label>
-                          {items.map((item) => (
-                            <ItemPreview key={item.id} item={item} />
-                          ))}
-                        </section>
-                      );
-                    })}
-                  </div>
-                  <div className="flex flex-row gap-x-2">
+                              console.log("inputValue", inputValue);
+
+                              if (inputValue === "") {
+                                setSearchedItems([]);
+                                return;
+                              }
+
+                              axios
+                                .get("http://localhost:3000/api/items", {
+                                  params: {
+                                    query: inputValue,
+                                  },
+                                })
+                                .then((response) => {
+                                  console.log("response", response);
+                                  setSearchedItems(response.data);
+                                })
+                                .finally(() => {});
+                            }}
+                          />
+
+                          <CommandList className="max-h-72 overscroll-contain">
+                            <CommandEmpty>No Items Found.</CommandEmpty>
+                            {searchedItems?.map((item) => {
+                              return (
+                                <CommandItem
+                                  key={item.unique_id}
+                                  value={`${item.name}_${item.unique_id}`}
+                                  onSelect={(item) => {
+                                    console.log("item", item);
+                                    const itemId = item.split("_")[1];
+
+                                    const selectedItem = searchedItems.find(
+                                      (item) => item.unique_id === itemId
+                                    );
+
+                                    if (!selectedItem) {
+                                      return;
+                                    }
+
+                                    console.log("selectedItem", selectedItem);
+
+                                    const slot = inventoryTypeToSlot(
+                                      selectedItem.inventoryType
+                                    );
+
+                                    console.log("slot", slot);
+
+                                    if (form.getValues(`gearInfo.${slot}`)) {
+                                      const existingItem = form
+                                        .getValues(`gearInfo.${slot}`)
+                                        .find(
+                                          (item) =>
+                                            item.unique_id ===
+                                            selectedItem.unique_id
+                                        );
+
+                                      if (existingItem) {
+                                        return;
+                                      }
+                                    }
+
+                                    form.setValue(`gearInfo.${slot}`, [
+                                      ...gearInfo[slot],
+                                      selectedItem,
+                                    ]);
+
+                                    setSearchOpen(false);
+                                  }}
+                                >
+                                  <SmallItemPreview item={item} />
+                                </CommandItem>
+                              );
+                            })}
+                          </CommandList>
+                        </Command>
+                      </PopoverContent>
+                    </Popover>
                     <Button type="submit">Output</Button>
+                    {formState.isSubmitSuccessful && (
+                      <Alert className="col-span-2">
+                        <ClipboardCopy className="h-4 w-4" />
+                        <AlertTitle>Output Copied</AlertTitle>
+                        <AlertDescription>
+                          The output has been copied to your clipboard.
+                        </AlertDescription>
+                      </Alert>
+                    )}
                   </div>
-                </CardContent>
-              </Card>
-            </Popover>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8">
+                  {Object.entries(gearInfo).map(([slot, items], i) => {
+                    if (items.length === 0) {
+                      return null;
+                    }
+
+                    return (
+                      <section
+                        className="space-y-6 rounded-lg w-full"
+                        key={slot}
+                      >
+                        <Label className="text-xl uppercase font-semibold">
+                          {slot}
+                        </Label>
+                        {items.map((item) => (
+                          <ItemPreview key={item.unique_id} item={item} />
+                        ))}
+                      </section>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
           )}
         </form>
       </Form>
@@ -231,12 +331,42 @@ export default function Home() {
   );
 }
 
+function SmallItemPreview({ item }: { item: any }) {
+  return (
+    <div className="flex flex-row w-full gap-x-3 gap-y-2 relative bg-muted p-1.5 rounded-lg h-[50px] items-center">
+      <Button
+        className="p-0.5 h-full flex-none"
+        style={{
+          backgroundColor: qualityTypeToColour(item.quality),
+        }}
+      >
+        <Link
+          className="relative h-full aspect-square rounded-md overflow-hidden"
+          href={createTooltipUrl(item)}
+        >
+          <Image
+            src={`https://www.raidbots.com/static/images/icons/56/${item.icon}.png`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            alt={item.name}
+          />
+        </Link>
+      </Button>
+      <div className="space-y-1 flex flex-col truncate">
+        <h1
+          style={{ color: qualityTypeToColour(item.quality) }}
+          className="truncate text-sm font-bold leading-5"
+        >
+          {item.name}
+        </h1>
+      </div>
+    </div>
+  );
+}
+
 function ItemPreview({ item }: { item: any }) {
   return (
-    <div
-      key={item.id}
-      className="flex flex-row items-start w-full gap-x-3 gap-y-4 relative bg-muted p-3 rounded-lg h-[72px]"
-    >
+    <div className="flex flex-row items-start w-full gap-x-3 gap-y-4 relative bg-muted p-3 rounded-lg h-[72px]">
       <Button
         className="p-0.5 h-full flex-none"
         style={{
