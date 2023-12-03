@@ -1,5 +1,5 @@
-import { GetItemInfoRequest } from '@/types/contracts/GetItemInfo';
-import { GearSchema } from '@/types/schemas/GearOutputSchema';
+import { ExtractedGear, extractedGearSchema } from '@/lib/simc';
+import { GearSchema } from '@/schemas';
 import axios, { AxiosResponse } from 'axios';
 import { NextResponse, type NextRequest } from 'next/server'
 import { v4 as uuidv4 } from 'uuid';
@@ -8,7 +8,9 @@ export async function POST(
   request: NextRequest
 ) {  
 
-  const body = await request.json() as GetItemInfoRequest;
+  const body = await request.json();
+
+  const validatedBody = extractedGearSchema.parse(body);
 
   const { searchParams } = new URL(request.url);
 
@@ -16,10 +18,10 @@ export async function POST(
     const response = await axios.post<
       string,
       AxiosResponse<GearSchema>,
-      GetItemInfoRequest
+      { gear: ExtractedGear }
     >(
       "https://www.raidbots.com/api/item-info",
-      { gear: body.gear },
+      { gear: validatedBody },
       {
         params: searchParams,
       }
@@ -34,7 +36,7 @@ export async function POST(
       ))}
     });
 
-    return NextResponse.json(response.data);
+    return NextResponse.json<GearSchema>(response.data);
 
   } catch (error) {
     return NextResponse.error();

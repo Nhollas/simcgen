@@ -24,7 +24,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui";
 import { useState } from "react";
-import { GearOutputSchema, GearSchema, ItemSchema } from "@/schemas";
+import { GearOutputSchema, GearSchema, GearItemSchema } from "@/schemas";
 import { UseFormReturn } from "react-hook-form";
 import { ItemPreview, MiniItemPreview } from "./item-preview";
 
@@ -37,7 +37,7 @@ export function GearDisplay({
 }) {
   const { formState } = form;
 
-  const [searchedItems, setSearchedItems] = useState<ItemSchema[]>([]);
+  const [searchedItems, setSearchedItems] = useState<GearItemSchema[]>([]);
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (

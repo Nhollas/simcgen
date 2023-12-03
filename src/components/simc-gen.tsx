@@ -1,5 +1,5 @@
 "use client";
-import axios, { AxiosResponse } from "axios";
+import { ExtractedGear } from "@/lib/simc";
 import { useEffect } from "react";
 import Script from "next/script";
 
@@ -8,13 +8,10 @@ import {
   extractCharacterInfoFromInput,
   extractGearFromInput,
 } from "@/lib/simc";
-import {
-  GetItemInfoResponse,
-  GetItemInfoRequest,
-} from "@/types/contracts/GetItemInfo";
 import { useOutputForm } from "@/hooks";
 import { GearOutputForm, SimcInput, GearDisplay } from "@/components";
 import { isBrowser } from "@/lib/utils";
+import { getGearInfo } from "@/api";
 
 export function SimcGen() {
   const form = useOutputForm();
@@ -26,18 +23,8 @@ export function SimcGen() {
   useEffect(() => {
     let isMounted = true;
 
-    async function fetchItemInfo(gear: any, params: URLSearchParams) {
-      const response = await axios.post<
-        string,
-        AxiosResponse<GetItemInfoResponse>,
-        GetItemInfoRequest
-      >(
-        "/api/item-info",
-        { gear },
-        {
-          params,
-        }
-      );
+    async function fetchItemInfo(gear: ExtractedGear, params: URLSearchParams) {
+      const response = await getGearInfo(gear, params);
 
       if (isMounted) {
         // @ts-ignore

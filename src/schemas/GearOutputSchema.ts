@@ -111,14 +111,6 @@ const professionSchema = z
   })
   .optional();
 
-const effectSchema = z
-  .object({
-    id: z.number(),
-    index: z.number(),
-    spell: spellSchema,
-  })
-  .optional();
-
 const upgradeSchema = z
   .object({
     level: z.number(),
@@ -133,9 +125,9 @@ const upgradeSchema = z
   })
   .optional();
 
-export type ItemSchema = z.infer<typeof itemSchema>;
+export type GearItemSchema = z.infer<typeof gearItemSchema>;
 
-const itemSchema = z.object({
+const gearItemSchema = z.object({
   id: z.number(),
   unique_id: z.string(),
   bonus_id: z.string().optional(),
@@ -163,20 +155,20 @@ const itemSchema = z.object({
 export type GearSchema = z.infer<typeof gearSchema>;
 
 const gearSchema = z.object({
-  head: z.array(itemSchema),
-  neck: z.array(itemSchema),
-  shoulder: z.array(itemSchema),
-  back: z.array(itemSchema),
-  chest: z.array(itemSchema),
-  wrist: z.array(itemSchema),
-  hands: z.array(itemSchema),
-  waist: z.array(itemSchema),
-  legs: z.array(itemSchema),
-  feet: z.array(itemSchema),
-  main_hand: z.array(itemSchema),
-  off_hand: z.array(itemSchema).optional(),
-  rings: z.array(itemSchema),
-  trinkets: z.array(itemSchema),
+  head: z.array(gearItemSchema),
+  neck: z.array(gearItemSchema),
+  shoulder: z.array(gearItemSchema),
+  back: z.array(gearItemSchema),
+  chest: z.array(gearItemSchema),
+  wrist: z.array(gearItemSchema),
+  hands: z.array(gearItemSchema),
+  waist: z.array(gearItemSchema),
+  legs: z.array(gearItemSchema),
+  feet: z.array(gearItemSchema),
+  main_hand: z.array(gearItemSchema),
+  off_hand: z.array(gearItemSchema).optional(),
+  rings: z.array(gearItemSchema),
+  trinkets: z.array(gearItemSchema),
 });
 
 const characterInfoSchema = z.object({

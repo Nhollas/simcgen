@@ -1,4 +1,4 @@
-import { GetItemSchema } from "@/types/schemas/GetItemSchema";
+import { SearchGearSchema } from "@/schemas";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { NextResponse } from "next/server";
@@ -10,7 +10,7 @@ export async function GET(request: Request) {
 
   searchParams.append("locale", "en_US");
 
-  const response = await axios.get<GetItemSchema>(
+  const response = await axios.get<SearchGearSchema>(
     `https://www.raidbots.com/api/item/${query}`,
     {
       params: searchParams,
@@ -23,5 +23,5 @@ export async function GET(request: Request) {
     item["unique_id"] = uuidv4();
   });
 
-  return NextResponse.json(response.data);
+  return NextResponse.json<SearchGearSchema>(response.data);
 }

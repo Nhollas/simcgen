@@ -8,7 +8,7 @@ import {
   specKey,
   specToId,
 } from "./raidbots";
-import { GearOutputSchema, ItemSchema } from "@/types/schemas/GearOutputSchema";
+import { GearOutputSchema, GearItemSchema } from "@/schemas";
 
 const possibleClassLines = [
   "deathknight=",
@@ -26,7 +26,11 @@ const possibleClassLines = [
   "evoker=",
 ];
 
-export function extractGearFromInput(simcInput: string) {
+export const extractedGearSchema = z.record(z.array(z.record(z.string())));
+
+export type ExtractedGear = Record<string, Record<string, string>[]>;
+
+export function extractGearFromInput(simcInput: string): ExtractedGear {
   const lines: string[] = simcInput.split("\n");
 
   const bagLinesToKeep = [
@@ -75,16 +79,16 @@ export function extractGearFromInput(simcInput: string) {
     }
   });
 
-  const gearData: Record<string, any> = {};
+  const gearData: Record<string, Record<string, string>[]> = {};
   let currentSlot = "";
 
   for (const line of filteredLines) {
-    let gearItem: Record<string, any> = {};
+    let gearItem: Record<string, string> = {};
 
     if (line.startsWith("# ")) {
       currentSlot = line.split("# ")[1].split("=")[0].trim();
     } else {
-      gearItem = { equipped: true };
+      gearItem["equipped"] = "true";
       currentSlot = line.split("=")[0];
     }
 
@@ -96,7 +100,7 @@ export function extractGearFromInput(simcInput: string) {
       currentSlot = "rings";
     }
 
-    // Check if there are alreadys items in the slot
+    // Check if there are any items in the slot.
     if (!gearData[currentSlot]) {
       gearData[currentSlot] = [];
     }
@@ -112,6 +116,8 @@ export function extractGearFromInput(simcInput: string) {
 
     gearData[currentSlot].push(gearItem);
   }
+
+  console.log("gearData", gearData);
 
   return gearData;
 }
@@ -207,7 +213,7 @@ export function createQueryParamsFromInput(simcInput: string) {
   return params;
 }
 
-function generateGearLine(item: ItemSchema) {
+function generateGearLine(item: GearItemSchema) {
   const { id, bonus_id, enchant_id, context, socketInfo } = item;
 
   let attributes: string[] = [];
