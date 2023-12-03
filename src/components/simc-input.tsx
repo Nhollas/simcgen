@@ -1,4 +1,4 @@
-import { exampleInput } from "@/lib/utils";
+import { exampleInput } from "@/lib/utils"
 import {
   Button,
   Card,
@@ -12,16 +12,16 @@ import {
   FormLabel,
   FormMessage,
   Textarea,
-} from "./ui";
-import { UseFormReturn } from "react-hook-form";
-import Link from "next/link";
+} from "./ui"
+import { UseFormReturn } from "react-hook-form"
+import Link from "next/link"
 
 export function SimcInput({ form }: { form: UseFormReturn<any> }) {
   return (
-    <Card className="h-full w-full overflow-scroll max-w-3xl relative">
+    <Card className="relative h-full w-full max-w-3xl overflow-scroll">
       <CardHeader>
         <CardTitle>Simulation Craft Input</CardTitle>
-        <CardDescription className="flex flex-col gap-y-2 w-full">
+        <CardDescription className="flex w-full flex-col gap-y-2">
           Copy/paste the text from the SimulationCraft addon.
           <Link
             className="font-medium text-white underline"
@@ -58,5 +58,5 @@ export function SimcInput({ form }: { form: UseFormReturn<any> }) {
         />
       </CardContent>
     </Card>
-  );
+  )
 }

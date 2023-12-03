@@ -1,31 +1,30 @@
-import { createSimcOutputFromInfo } from "@/lib/simc";
-import { Form } from "./ui";
-import { GearOutputSchema } from "@/schemas";
-import { UseFormReturn } from "react-hook-form";
+import { createSimcOutputFromInfo } from "@/lib/simc"
+import { Form } from "./ui"
+import { GearOutputSchema } from "@/schemas"
+import { UseFormReturn } from "react-hook-form"
 
 export function GearOutputForm({
   form,
   children,
 }: {
-  form: UseFormReturn<GearOutputSchema>;
-  children: any;
+  form: UseFormReturn<GearOutputSchema>
+  children: any
 }) {
-
   function handleSubmitTest(values: GearOutputSchema) {
-    const simcExport = createSimcOutputFromInfo(values);
+    const simcExport = createSimcOutputFromInfo(values)
 
     // Make the user copy the output
-    navigator.clipboard.writeText(simcExport);
+    navigator.clipboard.writeText(simcExport)
   }
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmitTest)}
-        className="flex flex-col items-center w-full justify-center space-y-8"
+        className="flex w-full flex-col items-center justify-center space-y-8"
       >
         {children}
       </form>
     </Form>
-  );
+  )
 }

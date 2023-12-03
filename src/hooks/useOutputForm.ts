@@ -1,7 +1,7 @@
-import { isBrowser } from "@/lib/utils";
-import { GearOutputSchema, gearOutputSchema } from "@/schemas";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { isBrowser } from "@/lib/utils"
+import { GearOutputSchema, gearOutputSchema } from "@/schemas"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
 
 export function useOutputForm() {
   return useForm<GearOutputSchema>({
@@ -13,5 +13,5 @@ export function useOutputForm() {
       searchedItems: [],
       searchOpen: false,
     },
-  });
+  })
 }

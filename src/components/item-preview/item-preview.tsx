@@ -1,26 +1,37 @@
-import { qualityTypeToColour } from "@/lib/raidbots";
-import { Badge, Button } from "../ui";
-import { createTooltipUrl } from "@/lib/wowhead";
-import Link from "next/link";
-import Image from "next/image";
-import { GemPreviews } from "./gem-previews";
-import { EnchantmentPreview } from "./enchantment-preview";
-import { GearItemSchema } from "@/schemas";
-import { EditItem } from "./edit-item";
-import clsx from "clsx";
+import { qualityTypeToColour } from "@/lib/raidbots"
+import { Badge, Button } from "../ui"
+import { createTooltipUrl } from "@/lib/wowhead"
+import Link from "next/link"
+import Image from "next/image"
+import { GemPreviews } from "./gem-previews"
+import { EnchantmentPreview } from "./enchantment-preview"
+import { GearItemSchema } from "@/schemas"
+import { EditItem } from "./edit-item"
+import clsx from "clsx"
 
-export function ItemPreview({ item, noAction }: { item: GearItemSchema, noAction?: boolean }) {
+export function ItemPreview({
+  item,
+  noAction,
+}: {
+  item: GearItemSchema
+  noAction?: boolean
+}) {
   return (
-    <div className={clsx("flex flex-row items-start w-full gap-x-3 gap-y-4 relative bg-muted p-3 rounded-lg h-[72px]", noAction && "overflow-hidden")}>
+    <div
+      className={clsx(
+        "relative flex h-[72px] w-full flex-row items-start gap-x-3 gap-y-4 rounded-lg bg-muted p-3",
+        noAction && "overflow-hidden",
+      )}
+    >
       <Button
-        className="p-0.5 h-full"
+        className="h-full p-0.5"
         style={{
           backgroundColor: qualityTypeToColour(item.quality),
         }}
       >
         <Link
-          className="relative h-full aspect-square rounded-md overflow-hidden"
-          href={createTooltipUrl(item, )}
+          className="relative aspect-square h-full overflow-hidden rounded-md"
+          href={createTooltipUrl(item)}
         >
           <Image
             src={`https://www.raidbots.com/static/images/icons/56/${item.icon}.png`}
@@ -30,7 +41,7 @@ export function ItemPreview({ item, noAction }: { item: GearItemSchema, noAction
           />
         </Link>
       </Button>
-      <div className="space-y-1 flex flex-col truncate">
+      <div className="flex flex-col space-y-1 truncate">
         <div className="flex flex-row gap-x-4">
           <h1
             style={{ color: qualityTypeToColour(item.quality) }}
@@ -40,8 +51,8 @@ export function ItemPreview({ item, noAction }: { item: GearItemSchema, noAction
           </h1>
           {item.equipped && <Badge className="bg-yellow-500">Equipped</Badge>}
         </div>
-        <div className="flex flex-row gap-x-2 items-center">
-          <p className="text-sm leading-3 flex-shrink-0">{item.itemLevel}</p>
+        <div className="flex flex-row items-center gap-x-2">
+          <p className="flex-shrink-0 text-sm leading-3">{item.itemLevel}</p>
           {item.socketInfo.PRISMATIC && (
             <GemPreviews gems={item.socketInfo.PRISMATIC.gems} />
           )}
@@ -52,5 +63,5 @@ export function ItemPreview({ item, noAction }: { item: GearItemSchema, noAction
       </div>
       {!noAction && <EditItem item={item} />}
     </div>
-  );
+  )
 }

@@ -1,54 +1,54 @@
-"use client";
-import { ExtractedGear } from "@/lib/simc";
-import { useEffect } from "react";
-import Script from "next/script";
+"use client"
+import { ExtractedGear } from "@/lib/simc"
+import { useEffect } from "react"
+import Script from "next/script"
 
 import {
   createQueryParamsFromInput,
   extractCharacterInfoFromInput,
   extractGearFromInput,
-} from "@/lib/simc";
-import { useOutputForm } from "@/hooks";
-import { GearOutputForm, SimcInput, GearDisplay } from "@/components";
-import { isBrowser } from "@/lib/utils";
-import { getGearInfo } from "@/api";
+} from "@/lib/simc"
+import { useOutputForm } from "@/hooks"
+import { GearOutputForm, SimcInput, GearDisplay } from "@/components"
+import { isBrowser } from "@/lib/utils"
+import { getGearInfo } from "@/api"
 
 export function SimcGen() {
-  const form = useOutputForm();
+  const form = useOutputForm()
 
-  const { watch, setValue } = form;
+  const { watch, setValue } = form
 
-  const [simcInput, gearInfo] = watch(["simcInput", "gearInfo"]);
+  const [simcInput, gearInfo] = watch(["simcInput", "gearInfo"])
 
   useEffect(() => {
-    let isMounted = true;
+    let isMounted = true
 
     async function fetchItemInfo(gear: ExtractedGear, params: URLSearchParams) {
-      const response = await getGearInfo(gear, params);
+      const response = await getGearInfo(gear, params)
 
       if (isMounted) {
-        setValue("gearInfo", response);
+        setValue("gearInfo", response)
       }
     }
 
-    const gear = extractGearFromInput(simcInput);
-    const characterInfo = extractCharacterInfoFromInput(simcInput) as any;
+    const gear = extractGearFromInput(simcInput)
+    const characterInfo = extractCharacterInfoFromInput(simcInput) as any
 
-    setValue("characterInfo", characterInfo);
+    setValue("characterInfo", characterInfo)
 
-    const queryParams = createQueryParamsFromInput(simcInput);
+    const queryParams = createQueryParamsFromInput(simcInput)
 
-    fetchItemInfo(gear, queryParams);
+    fetchItemInfo(gear, queryParams)
 
-    isBrowser && localStorage.setItem("simcInput", simcInput);
+    isBrowser && localStorage.setItem("simcInput", simcInput)
 
     return () => {
-      isMounted = false;
-    };
-  }, [simcInput, setValue]);
+      isMounted = false
+    }
+  }, [simcInput, setValue])
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-3 md:p-6 w-full max-w-5xl">
+    <main className="flex min-h-screen w-full max-w-5xl flex-col items-center justify-between p-3 md:p-6">
       <GearOutputForm form={form}>
         <SimcInput form={form} />
         {gearInfo && <GearDisplay gear={gearInfo} />}
@@ -56,5 +56,5 @@ export function SimcGen() {
       <Script src="https://wow.zamimg.com/js/tooltips.js" />
       <Script src="/scripts/wowheadTooltip.js" />
     </main>
-  );
+  )
 }

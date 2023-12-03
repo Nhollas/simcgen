@@ -1,2 +1,2 @@
-export * from "./sticky-bar";
-export * from "./gear-display";
+export * from "./sticky-bar"
+export * from "./gear-display"

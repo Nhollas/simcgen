@@ -1,10 +1,10 @@
-import { ExtractedGear } from "@/lib/simc";
-import { GearSchema } from "@/schemas";
-import axios, { AxiosResponse } from "axios";
+import { ExtractedGear } from "@/lib/simc"
+import { GearSchema } from "@/schemas"
+import axios, { AxiosResponse } from "axios"
 
 export async function getGearInfo(
   gear: ExtractedGear,
-  params: URLSearchParams
+  params: URLSearchParams,
 ) {
   const response = await axios.post<
     string,
@@ -15,8 +15,8 @@ export async function getGearInfo(
     { gear },
     {
       params,
-    }
-  );
+    },
+  )
 
-  return response.data;
+  return response.data
 }

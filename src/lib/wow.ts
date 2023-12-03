@@ -1,9 +1,8 @@
-import { GearItemSchema } from "@/schemas";
+import { GearItemSchema } from "@/schemas"
 
 /* If Head, Neck, Wrist, Rings or Belt. */
 export function isSocketable(inventoryType: number) {
-
-  return [1, 2, 9, 11, 12, 6].includes(inventoryType);
+  return [1, 2, 9, 11, 12, 6].includes(inventoryType)
 }
 
 function isSocketed(item: GearItemSchema) {
@@ -11,5 +10,5 @@ function isSocketed(item: GearItemSchema) {
 }
 
 export function isSocketAddable(item: GearItemSchema) {
-  return isSocketable(item.inventoryType) && !isSocketed(item);
+  return isSocketable(item.inventoryType) && !isSocketed(item)
 }

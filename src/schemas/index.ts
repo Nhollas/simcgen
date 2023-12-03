@@ -1,2 +1,2 @@
-export * from "./GearOutputSchema";
-export * from "./SearchGearSchema";
+export * from "./GearOutputSchema"
+export * from "./SearchGearSchema"

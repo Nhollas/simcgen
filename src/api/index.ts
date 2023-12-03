@@ -1,1 +1,1 @@
-export * from "./getGearInfo";
+export * from "./getGearInfo"

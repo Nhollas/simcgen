@@ -1,9 +1,9 @@
-import { qualityTypeToColour } from "@/lib/raidbots";
-import { Button } from "../ui";
-import { createGemTooltipUrl } from "@/lib/wowhead";
-import Link from "next/link";
-import Image from "next/image";
-import { GemSchema } from "@/schemas";
+import { qualityTypeToColour } from "@/lib/raidbots"
+import { Button } from "../ui"
+import { createGemTooltipUrl } from "@/lib/wowhead"
+import Link from "next/link"
+import Image from "next/image"
+import { GemSchema } from "@/schemas"
 
 export function GemPreviews({ gems }: { gems: GemSchema[] }) {
   return (
@@ -11,13 +11,13 @@ export function GemPreviews({ gems }: { gems: GemSchema[] }) {
       {gems.map((gem, i) => (
         <Button
           key={i}
-          className="p-0.5 h-6 w-6 rounded-md"
+          className="h-6 w-6 rounded-md p-0.5"
           style={{
             backgroundColor: qualityTypeToColour(gem.quality || 0),
           }}
         >
           <Link
-            className="h-5 w-5 overflow-hidden relative rounded-md"
+            className="relative h-5 w-5 overflow-hidden rounded-md"
             href={createGemTooltipUrl(gem)}
           >
             <Image
@@ -38,5 +38,5 @@ export function GemPreviews({ gems }: { gems: GemSchema[] }) {
         </Button>
       ))}
     </div>
-  );
+  )
 }

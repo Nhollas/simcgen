@@ -1,21 +1,21 @@
-import { qualityTypeToColour } from "@/lib/raidbots";
-import { Button } from "../ui";
-import { createTooltipUrl } from "@/lib/wowhead";
-import Link from "next/link";
-import Image from "next/image";
-import { GearItemSchema } from "@/schemas";
+import { qualityTypeToColour } from "@/lib/raidbots"
+import { Button } from "../ui"
+import { createTooltipUrl } from "@/lib/wowhead"
+import Link from "next/link"
+import Image from "next/image"
+import { GearItemSchema } from "@/schemas"
 
 export function MiniItemPreview({ item }: { item: GearItemSchema }) {
   return (
-    <div className="flex flex-row w-full gap-x-3 gap-y-2 relative bg-muted p-1.5 rounded-lg h-[50px] items-center">
+    <div className="relative flex h-[50px] w-full flex-row items-center gap-x-3 gap-y-2 rounded-lg bg-muted p-1.5">
       <Button
-        className="p-0.5 h-full flex-none"
+        className="h-full flex-none p-0.5"
         style={{
           backgroundColor: qualityTypeToColour(item.quality),
         }}
       >
         <Link
-          className="relative h-full aspect-square rounded-md overflow-hidden"
+          className="relative aspect-square h-full overflow-hidden rounded-md"
           href={createTooltipUrl(item)}
         >
           <Image
@@ -26,7 +26,7 @@ export function MiniItemPreview({ item }: { item: GearItemSchema }) {
           />
         </Link>
       </Button>
-      <div className="space-y-1 flex flex-col truncate">
+      <div className="flex flex-col space-y-1 truncate">
         <h1
           style={{ color: qualityTypeToColour(item.quality) }}
           className="truncate text-sm font-bold leading-5"
@@ -35,5 +35,5 @@ export function MiniItemPreview({ item }: { item: GearItemSchema }) {
         </h1>
       </div>
     </div>
-  );
+  )
 }

@@ -34,7 +34,7 @@ const specIdMap = {
   devastation: 1467,
   preservation: 1468,
   augmentation: 1473,
-};
+}
 
 const classIdMap = {
   hunter: 3,
@@ -50,40 +50,40 @@ const classIdMap = {
   shaman: 7,
   warrior: 1,
   evoker: 13,
-};
+}
 
-export type classKey = keyof typeof classIdMap;
+export type classKey = keyof typeof classIdMap
 
-export type specKey = keyof typeof specIdMap;
+export type specKey = keyof typeof specIdMap
 
 export function specToId(specName: keyof typeof specIdMap) {
-  return specIdMap[specName];
+  return specIdMap[specName]
 }
 
 export function specIdToName(specId: number) {
   const specIdMapReverse = Object.fromEntries(
-    Object.entries(specIdMap).map(([key, value]) => [value, key])
-  );
+    Object.entries(specIdMap).map(([key, value]) => [value, key]),
+  )
 
-  return specIdMapReverse[specId];
+  return specIdMapReverse[specId]
 }
 
 export function classIdToName(classId: number) {
   const classIdMapReverse = Object.fromEntries(
-    Object.entries(classIdMap).map(([key, value]) => [value, key])
-  );
+    Object.entries(classIdMap).map(([key, value]) => [value, key]),
+  )
 
-  return classIdMapReverse[classId];
+  return classIdMapReverse[classId]
 }
 
 export function classToId(className: keyof typeof classIdMap) {
-  return classIdMap[className];
+  return classIdMap[className]
 }
 
 export function raidbotsQueryParamAdapter(
-  filteredLines: string[]
+  filteredLines: string[],
 ): URLSearchParams {
-  const raidbotsQueryParams = ["locale", "plvl", "classId", "specId", "char"];
+  const raidbotsQueryParams = ["locale", "plvl", "classId", "specId", "char"]
 
   const classKeys = [
     "deathknight",
@@ -99,53 +99,56 @@ export function raidbotsQueryParamAdapter(
     "warlock",
     "warrior",
     "evoker",
-  ];
+  ]
 
-  const queryParams = filteredLines.reduce((acc, line) => {
-    const [key, value] = line.split("=");
-    acc[key] = value;
-    return acc;
-  }, {} as Record<string, string>);
+  const queryParams = filteredLines.reduce(
+    (acc, line) => {
+      const [key, value] = line.split("=")
+      acc[key] = value
+      return acc
+    },
+    {} as Record<string, string>,
+  )
 
   // Convert queryParams to raidbotsQueryParams
-  const raidbotsParams = {} as Record<string, string>;
+  const raidbotsParams = {} as Record<string, string>
 
   for (const key in queryParams) {
-    const value = queryParams[key];
+    const value = queryParams[key]
 
     if (key === "level") {
       // Convert level to plvl
-      raidbotsParams["plvl"] = value;
+      raidbotsParams["plvl"] = value
     } else if (key === "spec") {
       // Convert spec to specId
       //@ts-ignore
-      raidbotsParams["specId"] = specToId(value);
+      raidbotsParams["specId"] = specToId(value)
     } else if (classKeys.includes(key)) {
       // Convert class key to classId
       //@ts-ignore
-      raidbotsParams["classId"] = classToId(key);
+      raidbotsParams["classId"] = classToId(key)
       // Get the corresponding character name for classId
-      raidbotsParams["char"] = value;
+      raidbotsParams["char"] = value
     } else if (raidbotsQueryParams.includes(key)) {
       // Directly copy other specified query parameters
-      raidbotsParams[key] = value;
+      raidbotsParams[key] = value
     }
   }
 
   // Add any missing parameters with default values
   const defaultParams: Record<string, string> = {
     locale: "en_US", // Default locale
-  };
+  }
 
-  const finalRaidbotsParams = { ...defaultParams, ...raidbotsParams };
+  const finalRaidbotsParams = { ...defaultParams, ...raidbotsParams }
 
-  return new URLSearchParams(finalRaidbotsParams);
+  return new URLSearchParams(finalRaidbotsParams)
 }
 
 export function qualityTypeToColour(qualityType: number) {
   type QualityTypeMap = {
-    [key: number]: string;
-  };
+    [key: number]: string
+  }
 
   const qualityTypeMap: QualityTypeMap = {
     1: "#ffffff",
@@ -155,9 +158,9 @@ export function qualityTypeToColour(qualityType: number) {
     5: "#ff8000",
     6: "#e6cc80",
     7: "#00ccff",
-  };
+  }
 
-  return qualityTypeMap[qualityType];
+  return qualityTypeMap[qualityType]
 }
 
 const gearSlots = {
@@ -175,12 +178,12 @@ const gearSlots = {
   off_hand: 22,
   rings: 11,
   trinkets: 12,
-};
+}
 
-type GearSlot = keyof typeof gearSlots;
+type GearSlot = keyof typeof gearSlots
 
 export function inventoryTypeToSlot(inventoryType: number) {
-  type InventoryTypeMap = Record<number, GearSlot>;
+  type InventoryTypeMap = Record<number, GearSlot>
 
   const inventoryTypeMap: InventoryTypeMap = {
     1: "head",
@@ -204,13 +207,13 @@ export function inventoryTypeToSlot(inventoryType: number) {
     21: "main_hand",
     22: "off_hand",
     23: "off_hand",
-  };
-
-  const result = inventoryTypeMap[inventoryType];
-
-  if (!result) {
-    return "head";
   }
 
-  return result;
+  const result = inventoryTypeMap[inventoryType]
+
+  if (!result) {
+    return "head"
+  }
+
+  return result
 }

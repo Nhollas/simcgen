@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { socketInfoSchema } from "./GearOutputSchema";
+import { z } from "zod"
+import { socketInfoSchema } from "./GearOutputSchema"
 
 const searchItemSchema = z.object({
   id: z.number(),
@@ -13,8 +13,8 @@ const searchItemSchema = z.object({
   itemLevel: z.number(),
   baseItemLevel: z.number(),
   socketInfo: socketInfoSchema,
-});
+})
 
-export type SearchItemSchema = z.infer<typeof searchItemSchema>;
-export type SearchGearSchema = SearchItemSchema[];
-export const searchGearSchema = z.array(searchItemSchema);
+export type SearchItemSchema = z.infer<typeof searchItemSchema>
+export type SearchGearSchema = SearchItemSchema[]
+export const searchGearSchema = z.array(searchItemSchema)

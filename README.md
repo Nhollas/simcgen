@@ -1,6 +1,5 @@
 ## WOW Simulation Gear Generator Tool
 
-
 Example SIMC Input:
 
 ```
