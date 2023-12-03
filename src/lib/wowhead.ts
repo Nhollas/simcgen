@@ -1,3 +1,5 @@
+import { GearItemSchema, GemSchema } from "@/schemas";
+
 function formatItemName(name?: string) {
   if (!name) {
     return "";
@@ -6,28 +8,37 @@ function formatItemName(name?: string) {
   return name.toLowerCase().replace(/'/g, "").replace(/ /g, "-");
 }
 
-function formatBonusId(bonusId?: string) {
-  if (!bonusId) {
-    return "";
-  }
-
+function formatBonusId(bonusId: string) {
   return bonusId.split("/").join(":");
 }
 
-export function createTooltipUrl(item: any, setPieces?: number[]) {
-  return `https://www.wowhead.com/item=${item.id}/${formatItemName(
-    item.name
-  )}?bonus=${formatBonusId(item.bonus_id)}&ilvl=${item.itemLevel}&ench=${
-    item.enchant_id
-  }&gems=${item.socketInfo?.PRISMATIC?.gemIds.join(":")}&spec=103${
-    item.itemSetId ? "&pcs=" + setPieces?.join(":") : ""
-  }`;
+export function createTooltipUrl(item: GearItemSchema, setPieces?: number[]) {
+  const formattedName = formatItemName(item.name);
+  const baseUrl = new URL(`https://www.wowhead.com/item=${item.id}/${formattedName}`);
+
+  baseUrl.searchParams.set("ilvl", item.itemLevel.toString());
+
+  if (item.bonus_id) {
+    baseUrl.searchParams.set("bonus", formatBonusId(item.bonus_id));
+  }
+
+  if (item.enchant_id) {
+    baseUrl.searchParams.set("ench", item.enchant_id.toString());
+  }
+
+  if (item.socketInfo?.PRISMATIC?.gemIds.length) {
+    const gemIds = item.socketInfo.PRISMATIC.gemIds.join(":");
+
+    baseUrl.searchParams.set("gems", gemIds);
+  }
+
+  if (item.itemSetId && setPieces) {
+    baseUrl.searchParams.set("pcs", setPieces.join(":"));
+  }
+
+  return baseUrl.toString();
 }
 
-export function createGemTooltipUrl(gem: any) {
+export function createGemTooltipUrl(gem: GemSchema) {
   return `https://www.wowhead.com/item=${gem.itemId}?crafting-quality=6`;
-}
-
-export function createEnchantTooltipUrl(enchant: any) {
-  return `https://www.wowhead.com/item=${enchant.itemId}?crafting-quality=6`;
 }

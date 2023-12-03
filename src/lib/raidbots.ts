@@ -157,13 +157,7 @@ export function qualityTypeToColour(qualityType: number) {
     7: "#00ccff",
   };
 
-  const result = qualityTypeMap[qualityType];
-
-  if (!result) {
-    return "#0000";
-  }
-
-  return result;
+  return qualityTypeMap[qualityType];
 }
 
 const gearSlots = {

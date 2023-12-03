@@ -87,12 +87,6 @@ const itemLimitSchema = z
   })
   .optional();
 
-const spellSchema = z.object({
-  id: z.number(),
-  name: z.string(),
-  icon: z.string(),
-});
-
 export const socketInfoSchema = z.object({
   PRISMATIC: prismaticSchema.optional(),
 });
@@ -150,6 +144,7 @@ const gearItemSchema = z.object({
   upgrade: upgradeSchema,
   profession: professionSchema,
   itemLimit: itemLimitSchema,
+  itemSetId: z.number().optional(),
 });
 
 export type GearSchema = z.infer<typeof gearSchema>;
