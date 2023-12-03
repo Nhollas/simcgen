@@ -27,8 +27,7 @@ export function SimcGen() {
       const response = await getGearInfo(gear, params);
 
       if (isMounted) {
-        // @ts-ignore
-        setValue("gearInfo", response.data);
+        setValue("gearInfo", response);
       }
     }
 
@@ -52,7 +51,7 @@ export function SimcGen() {
     <main className="flex min-h-screen flex-col items-center justify-between p-3 md:p-6 w-full max-w-5xl">
       <GearOutputForm form={form}>
         <SimcInput form={form} />
-        {gearInfo && <GearDisplay form={form} gear={gearInfo} />}
+        {gearInfo && <GearDisplay gear={gearInfo} />}
       </GearOutputForm>
       <Script src="https://wow.zamimg.com/js/tooltips.js" />
       <Script src="/scripts/wowheadTooltip.js" />

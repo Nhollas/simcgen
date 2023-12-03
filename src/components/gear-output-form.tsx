@@ -1,14 +1,16 @@
 import { createSimcOutputFromInfo } from "@/lib/simc";
 import { Form } from "./ui";
 import { GearOutputSchema } from "@/schemas";
+import { UseFormReturn } from "react-hook-form";
 
 export function GearOutputForm({
   form,
   children,
 }: {
-  form: any;
+  form: UseFormReturn<GearOutputSchema>;
   children: any;
 }) {
+
   function handleSubmitTest(values: GearOutputSchema) {
     const simcExport = createSimcOutputFromInfo(values);
 

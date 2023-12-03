@@ -10,6 +10,8 @@ export function useOutputForm() {
       gearInfo: undefined,
       simcInput: (isBrowser && localStorage.getItem("simcInput")) || "",
       characterInfo: undefined,
+      searchedItems: [],
+      searchOpen: false,
     },
   });
 }

@@ -189,4 +189,6 @@ export const gearOutputSchema = z.object({
   simcInput: z.string(),
   gearInfo: gearSchema,
   characterInfo: characterInfoSchema,
+  searchedItems: z.array(gearItemSchema),
+  searchOpen: z.boolean(),
 });

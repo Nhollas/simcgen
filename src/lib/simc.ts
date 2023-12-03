@@ -1,4 +1,3 @@
-import { z } from "zod";
 import {
   classIdToName,
   classKey,
@@ -26,9 +25,8 @@ const possibleClassLines = [
   "evoker=",
 ];
 
-export const extractedGearSchema = z.record(z.array(z.record(z.string())));
 
-export type ExtractedGear = Record<string, Record<string, string>[]>;
+export type ExtractedGear = Record<string, Record<string, string | boolean>[]>;
 
 export function extractGearFromInput(simcInput: string): ExtractedGear {
   const lines: string[] = simcInput.split("\n");
@@ -79,16 +77,16 @@ export function extractGearFromInput(simcInput: string): ExtractedGear {
     }
   });
 
-  const gearData: Record<string, Record<string, string>[]> = {};
+  const gearData: Record<string, Record<string, string | boolean>[]> = {};
   let currentSlot = "";
 
   for (const line of filteredLines) {
-    let gearItem: Record<string, string> = {};
+    let gearItem: Record<string, string | boolean> = {};
 
     if (line.startsWith("# ")) {
       currentSlot = line.split("# ")[1].split("=")[0].trim();
     } else {
-      gearItem["equipped"] = "true";
+      gearItem["equipped"] = true;
       currentSlot = line.split("=")[0];
     }
 
@@ -116,8 +114,6 @@ export function extractGearFromInput(simcInput: string): ExtractedGear {
 
     gearData[currentSlot].push(gearItem);
   }
-
-  console.log("gearData", gearData);
 
   return gearData;
 }

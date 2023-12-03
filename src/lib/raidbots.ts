@@ -166,46 +166,56 @@ export function qualityTypeToColour(qualityType: number) {
   return result;
 }
 
+const gearSlots = {
+  head: 1,
+  neck: 2,
+  shoulder: 3,
+  back: 16,
+  chest: 5,
+  wrist: 9,
+  hands: 10,
+  waist: 6,
+  legs: 7,
+  feet: 8,
+  main_hand: 21,
+  off_hand: 22,
+  rings: 11,
+  trinkets: 12,
+};
+
+type GearSlot = keyof typeof gearSlots;
+
 export function inventoryTypeToSlot(inventoryType: number) {
-  type InventoryTypeMap = {
-    [key: number]: string;
-  };
+  type InventoryTypeMap = Record<number, GearSlot>;
 
   const inventoryTypeMap: InventoryTypeMap = {
     1: "head",
     2: "neck",
     3: "shoulder",
-    4: "shirt",
+    4: "chest",
     5: "chest",
     6: "waist",
     7: "legs",
     8: "feet",
     9: "wrist",
     10: "hands",
-    11: "finger",
+    11: "rings",
     12: "trinkets",
-    13: "weapon",
-    14: "shield",
-    15: "ranged",
+    13: "main_hand",
+    14: "off_hand",
+    15: "main_hand",
     16: "back",
-    17: "two-hand",
-    18: "bag",
-    19: "tabard",
-    20: "robe",
-    21: "main-hand",
-    22: "off-hand",
-    23: "held-in-off-hand",
-    24: "ammo",
-    25: "thrown",
-    26: "ranged-right",
-    27: "quiver",
-    28: "relic",
+    17: "main_hand",
+    20: "chest",
+    21: "main_hand",
+    22: "off_hand",
+    23: "off_hand",
   };
 
   const result = inventoryTypeMap[inventoryType];
 
   if (!result) {
-    return "unknown";
+    return "head";
   }
 
   return result;
