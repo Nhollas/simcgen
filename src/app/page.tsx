@@ -15,6 +15,7 @@ import {
 } from "@/types/contracts/GetItemInfo";
 import { useOutputForm } from "@/hooks";
 import { GearOutputForm, SimcInput, GearDisplay } from "@/components";
+import { isBrowser } from "@/lib/utils";
 
 export default function Home() {
   const form = useOutputForm();
@@ -54,8 +55,7 @@ export default function Home() {
 
     fetchItemInfo(gear, queryParams);
 
-    typeof window !== "undefined" &&
-      localStorage.setItem("simcInput", simcInput);
+    isBrowser && localStorage.setItem("simcInput", simcInput);
 
     return () => {
       isMounted = false;
