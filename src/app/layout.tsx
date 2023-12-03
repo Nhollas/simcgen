@@ -13,11 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="flex justify-center items-center">
-        <Toaster />
-        {children}
-      </body>
+    <html lang="en" className="">
+      <body className="flex justify-center items-center">{children}</body>
     </html>
   );
 }
