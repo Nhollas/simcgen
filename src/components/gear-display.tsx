@@ -1,3 +1,5 @@
+"use client";
+
 import { inventoryTypeToSlot } from "@/lib/raidbots";
 import axios from "axios";
 import { ClipboardCopy } from "lucide-react";
