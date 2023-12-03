@@ -6,8 +6,9 @@ import Image from "next/image";
 import { GemPreviews } from "./gem-previews";
 import { EnchantmentPreview } from "./enchantment-preview";
 import { X } from "lucide-react";
+import { GearItemSchema } from "@/schemas";
 
-export function ItemPreview({ item }: { item: any }) {
+export function ItemPreview({ item }: { item: GearItemSchema }) {
   return (
     <div className="flex flex-row items-start w-full gap-x-3 gap-y-4 relative bg-muted p-3 rounded-lg h-[72px]">
       <Button
@@ -18,7 +19,7 @@ export function ItemPreview({ item }: { item: any }) {
       >
         <Link
           className="relative h-full aspect-square rounded-md overflow-hidden"
-          href={createTooltipUrl(item)}
+          href={createTooltipUrl(item, )}
         >
           <Image
             src={`https://www.raidbots.com/static/images/icons/56/${item.icon}.png`}

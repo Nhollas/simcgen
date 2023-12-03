@@ -3,8 +3,9 @@ import { Button } from "../ui";
 import { createTooltipUrl } from "@/lib/wowhead";
 import Link from "next/link";
 import Image from "next/image";
+import { GearItemSchema } from "@/schemas";
 
-export function MiniItemPreview({ item }: { item: any }) {
+export function MiniItemPreview({ item }: { item: GearItemSchema }) {
   return (
     <div className="flex flex-row w-full gap-x-3 gap-y-2 relative bg-muted p-1.5 rounded-lg h-[50px] items-center">
       <Button

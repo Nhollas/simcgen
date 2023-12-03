@@ -145,6 +145,7 @@ const gearItemSchema = z.object({
   profession: professionSchema,
   itemLimit: itemLimitSchema,
   itemSetId: z.number().optional(),
+  setPieces: z.array(z.string()).optional(),
 });
 
 export type GearSchema = z.infer<typeof gearSchema>;

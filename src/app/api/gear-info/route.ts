@@ -27,11 +27,17 @@ export async function POST(
 
     const gearInfo = response.data;
 
+    const setPieces = Object.values(gearInfo).flatMap((items) => items.filter((i) => i.itemSetId && i.equipped).map((i) => i.id.toString()));
+
     // Add unique-id property to each item.
     Object.entries(gearInfo).map(([slot, items]) => {
-      {items.map((item) => (
+      {items.map((item) => {
         item["unique_id"] = uuidv4()
-      ))}
+
+        if (item.itemSetId && item.equipped) {
+          item["setPieces"] = setPieces;
+        }
+      })}
     });
 
     return NextResponse.json<GearSchema>(response.data);
