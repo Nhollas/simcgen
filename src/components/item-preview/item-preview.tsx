@@ -5,14 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { GemPreviews } from "./gem-previews";
 import { EnchantmentPreview } from "./enchantment-preview";
-import { X } from "lucide-react";
 import { GearItemSchema } from "@/schemas";
+import { EditItem } from "./edit-item";
+import clsx from "clsx";
 
-export function ItemPreview({ item }: { item: GearItemSchema }) {
+export function ItemPreview({ item, noAction }: { item: GearItemSchema, noAction?: boolean }) {
   return (
-    <div className="flex flex-row items-start w-full gap-x-3 gap-y-4 relative bg-muted p-3 rounded-lg h-[72px]">
+    <div className={clsx("flex flex-row items-start w-full gap-x-3 gap-y-4 relative bg-muted p-3 rounded-lg h-[72px]", noAction && "overflow-hidden")}>
       <Button
-        className="p-0.5 h-full flex-none"
+        className="p-0.5 h-full"
         style={{
           backgroundColor: qualityTypeToColour(item.quality),
         }}
@@ -49,15 +50,7 @@ export function ItemPreview({ item }: { item: GearItemSchema }) {
           )}
         </div>
       </div>
-      <Button
-        onClick={() => {}}
-        variant="outline"
-        type="button"
-        className="h-10 w-10 rounded-full absolute -right-4 -top-4"
-      >
-        <X className="h-5 w-5 flex-shrink-0" />
-        <span className="sr-only">Remove</span>
-      </Button>
+      {!noAction && <EditItem item={item} />}
     </div>
   );
 }
