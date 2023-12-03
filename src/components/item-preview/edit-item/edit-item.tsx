@@ -18,6 +18,7 @@ import { GearItemSchema } from "@/schemas"
 import { PenBox, Trash2, CopyPlus } from "lucide-react"
 import { ManageSocket } from "./mange-socket"
 import { ItemPreview } from "../item-preview"
+import { ManageEnchantment } from "./manage-enchantment"
 
 export function EditItem({ item }: { item: GearItemSchema }) {
   return (
@@ -31,7 +32,7 @@ export function EditItem({ item }: { item: GearItemSchema }) {
           <span className="sr-only">Actions</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="">
         <DialogHeader>
           <DialogTitle>Edit Item</DialogTitle>
           <DialogDescription>
@@ -40,6 +41,7 @@ export function EditItem({ item }: { item: GearItemSchema }) {
         </DialogHeader>
         <ItemPreview item={item} noAction />
         {isSocketable(item.inventoryType) && <ManageSocket item={item} />}
+        <ManageEnchantment item={item} />
         <div className="grid grid-cols-2 gap-x-4">
           <Button className="flex w-full flex-row">
             <CopyPlus className="mr-2 h-4 w-4" />
