@@ -2,12 +2,10 @@ import {
   Button,
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -21,8 +19,8 @@ import { cn } from "@/lib/utils"
 import { GearItemSchema, GearOutputSchema } from "@/schemas"
 import { CheckIcon, ChevronsUpDown } from "lucide-react"
 import { useFieldArray, useFormContext } from "react-hook-form"
-import enchantmentsData from "@/lib/data/useable-enchantments.json"
-import sugmaData from "@/lib/data/enchantments.json"
+import enchantmentsData from "@/data/useable-enchantments.json"
+import sugmaData from "@/data/enchantments.json"
 import { EnchantmentPreview } from "../enchantment-preview"
 import { useState } from "react"
 
@@ -30,8 +28,6 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
   const form = useFormContext<GearOutputSchema>()
 
   const slot = inventoryTypeToSlot(item.inventoryType)
-
-  console.log(slot)
 
   const [open, setOpen] = useState(false)
 
@@ -41,22 +37,10 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
     keyName: "useFieldArrayId",
   })
 
-  const wepIds = [
-    200037, 200038, 200039, 200040, 199995, 199996, 199997, 199998, 199953,
-    199954, 199955, 199956, 200041, 200042, 200043, 200044, 199999, 200000,
-    200001, 200002, 199957, 199958, 199959, 199960,
-  ]
-
-  const wepEnchants = wepIds.map((id) => {
-    const enchant = sugmaData.find((enchant) => enchant.itemId === id)
-    return enchant
-  })
-
-  console.log("wepEnchants", wepEnchants)
-
   const index = fields.findIndex((field) => field.unique_id === item.unique_id)
 
   const enchantments = enchantmentsData[slot]
+
   return (
     <FormField
       control={form.control}
@@ -100,8 +84,7 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
                       key={enchantment.id}
                       className="gap-x-4"
                       onSelect={(value) => {
-                        const [enchantmentName, enchantmentId] =
-                          value.split(":")
+                        const [_, enchantmentId] = value.split(":")
                         form.setValue(
                           `gearInfo.${slot}.${index}.enchant_id`,
                           enchantmentId,

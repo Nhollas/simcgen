@@ -28,7 +28,7 @@ export function createTooltipUrl(item: GearItemSchema) {
     baseUrl.searchParams.append("ench", item.enchant_id.toString())
   }
 
-  if (item.socketInfo?.PRISMATIC?.gemIds.length) {
+  if (item.socketInfo?.PRISMATIC?.gemIds?.length) {
     const gemIds = item.socketInfo.PRISMATIC.gemIds.join(":")
 
     baseUrl.searchParams.append("gems", gemIds)

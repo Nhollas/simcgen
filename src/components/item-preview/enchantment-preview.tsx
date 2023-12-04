@@ -1,5 +1,4 @@
-import enchantments from "@/lib/data/enchantments.json"
-import { Button } from "../ui"
+import enchantments from "@/data/enchantments.json"
 import Link from "next/link"
 import Image from "next/image"
 import { qualityTypeToColour } from "@/lib/raidbots"

@@ -1,0 +1,2114 @@
+[
+  {
+    "id": 6472,
+    "displayName": "75 Primary / 66 Crit",
+    "spellIcon": "",
+    "itemId": 192982,
+    "itemName": "Inscribed Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_red",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "inscribed_illimited_diamond_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 75
+      },
+      {
+        "type": "crit",
+        "amount": 66
+      }
+    ]
+  },
+  {
+    "id": 6400,
+    "displayName": "75 Primary / 66 Haste",
+    "spellIcon": "",
+    "itemId": 192985,
+    "itemName": "Fierce Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_green",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "fierce_illimited_diamond_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 75
+      },
+      {
+        "type": "haste",
+        "amount": 66
+      }
+    ]
+  },
+  {
+    "id": 6475,
+    "displayName": "75 Primary / 66 Mast",
+    "spellIcon": "",
+    "itemId": 192988,
+    "itemName": "Skillful Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_black",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "skillful_illimited_diamond_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 75
+      },
+      {
+        "type": "mastery",
+        "amount": 66
+      }
+    ]
+  },
+  {
+    "id": 6478,
+    "displayName": "75 Primary / 66 Vers",
+    "spellIcon": "",
+    "itemId": 192991,
+    "itemName": "Resplendent Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_blue",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "resplendent_illimited_diamond_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 75
+      },
+      {
+        "type": "vers",
+        "amount": 66
+      }
+    ]
+  },
+  {
+    "id": 6471,
+    "displayName": "64 Primary / 56 Crit",
+    "spellIcon": "",
+    "itemId": 192981,
+    "itemName": "Inscribed Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_red",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "inscribed_illimited_diamond_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 64
+      },
+      {
+        "type": "crit",
+        "amount": 56
+      }
+    ]
+  },
+  {
+    "id": 6399,
+    "displayName": "64 Primary / 56 Haste",
+    "spellIcon": "",
+    "itemId": 192984,
+    "itemName": "Fierce Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_green",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "fierce_illimited_diamond_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 64
+      },
+      {
+        "type": "haste",
+        "amount": 56
+      }
+    ]
+  },
+  {
+    "id": 6474,
+    "displayName": "64 Primary / 56 Mast",
+    "spellIcon": "",
+    "itemId": 192987,
+    "itemName": "Skillful Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_black",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "skillful_illimited_diamond_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 64
+      },
+      {
+        "type": "mastery",
+        "amount": 56
+      }
+    ]
+  },
+  {
+    "id": 6477,
+    "displayName": "64 Primary / 56 Vers",
+    "spellIcon": "",
+    "itemId": 192990,
+    "itemName": "Resplendent Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_blue",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "resplendent_illimited_diamond_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 64
+      },
+      {
+        "type": "vers",
+        "amount": 56
+      }
+    ]
+  },
+  {
+    "id": 6470,
+    "displayName": "53 Primary / 46 Crit",
+    "spellIcon": "",
+    "itemId": 192980,
+    "itemName": "Inscribed Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_red",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "inscribed_illimited_diamond_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 53
+      },
+      {
+        "type": "crit",
+        "amount": 46
+      }
+    ]
+  },
+  {
+    "id": 6398,
+    "displayName": "53 Primary / 46 Haste",
+    "spellIcon": "",
+    "itemId": 192983,
+    "itemName": "Fierce Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_green",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "fierce_illimited_diamond_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 53
+      },
+      {
+        "type": "haste",
+        "amount": 46
+      }
+    ]
+  },
+  {
+    "id": 6473,
+    "displayName": "53 Primary / 46 Mast",
+    "spellIcon": "",
+    "itemId": 192986,
+    "itemName": "Skillful Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_black",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "skillful_illimited_diamond_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 53
+      },
+      {
+        "type": "mastery",
+        "amount": 46
+      }
+    ]
+  },
+  {
+    "id": 6476,
+    "displayName": "53 Primary / 46 Vers",
+    "spellIcon": "",
+    "itemId": 192989,
+    "itemName": "Resplendent Illimited Diamond",
+    "itemIcon": "inv_10_jewelcrafting_gem3primal_cut_blue",
+    "itemLimitCategory": {
+      "id": 501,
+      "name": "Primalist Gem",
+      "quantity": 1,
+      "flags": 1
+    },
+    "unique": 501,
+    "quality": 4,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "resplendent_illimited_diamond_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "stragiint",
+        "amount": 53
+      },
+      {
+        "type": "vers",
+        "amount": 46
+      }
+    ]
+  },
+  {
+    "id": 6421,
+    "displayName": "88 Crit",
+    "spellIcon": "",
+    "itemId": 192928,
+    "itemName": "Deadly Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "deadly_alexstraszite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 88
+      }
+    ]
+  },
+  {
+    "id": 6397,
+    "displayName": "70 Crit / 33 Haste",
+    "spellIcon": "",
+    "itemId": 192919,
+    "itemName": "Crafty Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "crafty_alexstraszite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 70
+      },
+      {
+        "type": "haste",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6415,
+    "displayName": "70 Crit / 33 Mast",
+    "spellIcon": "",
+    "itemId": 192922,
+    "itemName": "Sensei's Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "senseis_alexstraszite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 70
+      },
+      {
+        "type": "mastery",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6418,
+    "displayName": "70 Crit / 33 Vers",
+    "spellIcon": "",
+    "itemId": 192925,
+    "itemName": "Radiant Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "radiant_alexstraszite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 70
+      },
+      {
+        "type": "vers",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6394,
+    "displayName": "26 Crit / 26 Haste",
+    "spellIcon": "",
+    "itemId": 192902,
+    "itemName": "Crafty Queen's Ruby",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_red",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "crafty_queens_ruby_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 26
+      },
+      {
+        "type": "crit",
+        "amount": 26
+      }
+    ]
+  },
+  {
+    "id": 6420,
+    "displayName": "75 Crit",
+    "spellIcon": "",
+    "itemId": 192927,
+    "itemName": "Deadly Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "deadly_alexstraszite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 75
+      }
+    ]
+  },
+  {
+    "id": 6396,
+    "displayName": "60 Crit / 28 Haste",
+    "spellIcon": "",
+    "itemId": 192918,
+    "itemName": "Crafty Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "crafty_alexstraszite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 60
+      },
+      {
+        "type": "haste",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6414,
+    "displayName": "60 Crit / 28 Mast",
+    "spellIcon": "",
+    "itemId": 192921,
+    "itemName": "Sensei's Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "senseis_alexstraszite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 60
+      },
+      {
+        "type": "mastery",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6417,
+    "displayName": "60 Crit / 28 Vers",
+    "spellIcon": "",
+    "itemId": 192924,
+    "itemName": "Radiant Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "radiant_alexstraszite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 60
+      },
+      {
+        "type": "vers",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6393,
+    "displayName": "22 Crit / 22 Haste",
+    "spellIcon": "",
+    "itemId": 192901,
+    "itemName": "Crafty Queen's Ruby",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_red",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "crafty_queens_ruby_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 22
+      },
+      {
+        "type": "crit",
+        "amount": 22
+      }
+    ]
+  },
+  {
+    "id": 6419,
+    "displayName": "62 Crit",
+    "spellIcon": "",
+    "itemId": 192926,
+    "itemName": "Deadly Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "deadly_alexstraszite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 62
+      }
+    ]
+  },
+  {
+    "id": 6395,
+    "displayName": "49 Crit / 23 Haste",
+    "spellIcon": "",
+    "itemId": 192917,
+    "itemName": "Crafty Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "crafty_alexstraszite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 49
+      },
+      {
+        "type": "haste",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6413,
+    "displayName": "49 Crit / 23 Mast",
+    "spellIcon": "",
+    "itemId": 192920,
+    "itemName": "Sensei's Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "senseis_alexstraszite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 49
+      },
+      {
+        "type": "mastery",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6416,
+    "displayName": "49 Crit / 23 Vers",
+    "spellIcon": "",
+    "itemId": 192923,
+    "itemName": "Radiant Alexstraszite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_red",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "radiant_alexstraszite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 49
+      },
+      {
+        "type": "vers",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6392,
+    "displayName": "18 Crit / 18 Haste",
+    "spellIcon": "",
+    "itemId": 192900,
+    "itemName": "Crafty Queen's Ruby",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_red",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "crafty_queens_ruby_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "crit",
+        "amount": 18
+      },
+      {
+        "type": "haste",
+        "amount": 18
+      }
+    ]
+  },
+  {
+    "id": 6445,
+    "displayName": "88 Haste",
+    "spellIcon": "",
+    "itemId": 192955,
+    "itemName": "Quick Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "quick_ysemerald_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 88
+      }
+    ]
+  },
+  {
+    "id": 6442,
+    "displayName": "70 Haste / 33 Crit",
+    "spellIcon": "",
+    "itemId": 192945,
+    "itemName": "Crafty Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "crafty_ysemerald_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 70
+      },
+      {
+        "type": "crit",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6439,
+    "displayName": "70 Haste / 33 Mast",
+    "spellIcon": "",
+    "itemId": 192948,
+    "itemName": "Keen Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "keen_ysemerald_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 70
+      },
+      {
+        "type": "mastery",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6436,
+    "displayName": "70 Haste / 33 Vers",
+    "spellIcon": "",
+    "itemId": 192952,
+    "itemName": "Energized Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "energized_ysemerald_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 70
+      },
+      {
+        "type": "vers",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6406,
+    "displayName": "26 Haste / 26 Vers",
+    "spellIcon": "",
+    "itemId": 192908,
+    "itemName": "Energized Vibrant Emerald",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_green",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "energized_vibrant_emerald_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 26
+      },
+      {
+        "type": "vers",
+        "amount": 26
+      }
+    ]
+  },
+  {
+    "id": 6444,
+    "displayName": "75 Haste",
+    "spellIcon": "",
+    "itemId": 192954,
+    "itemName": "Quick Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "quick_ysemerald_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 75
+      }
+    ]
+  },
+  {
+    "id": 6441,
+    "displayName": "60 Haste / 28 Crit",
+    "spellIcon": "",
+    "itemId": 192944,
+    "itemName": "Crafty Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "crafty_ysemerald_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 60
+      },
+      {
+        "type": "crit",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6438,
+    "displayName": "60 Haste / 28 Mast",
+    "spellIcon": "",
+    "itemId": 192947,
+    "itemName": "Keen Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "keen_ysemerald_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 60
+      },
+      {
+        "type": "mastery",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6435,
+    "displayName": "60 Haste / 28 Vers",
+    "spellIcon": "",
+    "itemId": 192951,
+    "itemName": "Energized Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "energized_ysemerald_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 60
+      },
+      {
+        "type": "vers",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6405,
+    "displayName": "22 Haste / 22 Vers",
+    "spellIcon": "",
+    "itemId": 192907,
+    "itemName": "Energized Vibrant Emerald",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_green",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "energized_vibrant_emerald_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 22
+      },
+      {
+        "type": "vers",
+        "amount": 22
+      }
+    ]
+  },
+  {
+    "id": 6443,
+    "displayName": "62 Haste",
+    "spellIcon": "",
+    "itemId": 192953,
+    "itemName": "Quick Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "quick_ysemerald_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 62
+      }
+    ]
+  },
+  {
+    "id": 6440,
+    "displayName": "49 Haste / 23 Crit",
+    "spellIcon": "",
+    "itemId": 192943,
+    "itemName": "Crafty Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "crafty_ysemerald_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 49
+      },
+      {
+        "type": "crit",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6437,
+    "displayName": "49 Haste / 23 Mast",
+    "spellIcon": "",
+    "itemId": 192946,
+    "itemName": "Keen Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "keen_ysemerald_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 49
+      },
+      {
+        "type": "mastery",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6434,
+    "displayName": "49 Haste / 23 Vers",
+    "spellIcon": "",
+    "itemId": 192950,
+    "itemName": "Energized Ysemerald",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_green",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "energized_ysemerald_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 49
+      },
+      {
+        "type": "vers",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6404,
+    "displayName": "18 Haste / 18 Vers",
+    "spellIcon": "",
+    "itemId": 192906,
+    "itemName": "Energized Vibrant Emerald",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_green",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "energized_vibrant_emerald_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "haste",
+        "amount": 18
+      },
+      {
+        "type": "vers",
+        "amount": 18
+      }
+    ]
+  },
+  {
+    "id": 6457,
+    "displayName": "88 Mast",
+    "spellIcon": "",
+    "itemId": 192967,
+    "itemName": "Fractured Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "fractured_neltharite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 88
+      }
+    ]
+  },
+  {
+    "id": 6454,
+    "displayName": "70 Mast / 33 Crit",
+    "spellIcon": "",
+    "itemId": 192958,
+    "itemName": "Sensei's Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "senseis_neltharite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 70
+      },
+      {
+        "type": "crit",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6451,
+    "displayName": "70 Mast / 33 Haste",
+    "spellIcon": "",
+    "itemId": 192961,
+    "itemName": "Keen Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "keen_neltharite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 70
+      },
+      {
+        "type": "haste",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6448,
+    "displayName": "70 Mast / 33 Vers",
+    "spellIcon": "",
+    "itemId": 192964,
+    "itemName": "Zen Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "zen_neltharite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 70
+      },
+      {
+        "type": "vers",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6409,
+    "displayName": "26 Mast / 26 Crit",
+    "spellIcon": "",
+    "itemId": 192912,
+    "itemName": "Sensei's Sundered Onyx",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_black",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "senseis_sundered_onyx_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 26
+      },
+      {
+        "type": "crit",
+        "amount": 26
+      }
+    ]
+  },
+  {
+    "id": 6456,
+    "displayName": "75 Mast",
+    "spellIcon": "",
+    "itemId": 192966,
+    "itemName": "Fractured Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "fractured_neltharite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 75
+      }
+    ]
+  },
+  {
+    "id": 6453,
+    "displayName": "60 Mast / 28 Crit",
+    "spellIcon": "",
+    "itemId": 192957,
+    "itemName": "Sensei's Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "senseis_neltharite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 60
+      },
+      {
+        "type": "crit",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6450,
+    "displayName": "60 Mast / 28 Haste",
+    "spellIcon": "",
+    "itemId": 192960,
+    "itemName": "Keen Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "keen_neltharite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 60
+      },
+      {
+        "type": "haste",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6447,
+    "displayName": "60 Mast / 28 Vers",
+    "spellIcon": "",
+    "itemId": 192963,
+    "itemName": "Zen Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "zen_neltharite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 60
+      },
+      {
+        "type": "vers",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6408,
+    "displayName": "22 Mast / 22 Crit",
+    "spellIcon": "",
+    "itemId": 192911,
+    "itemName": "Sensei's Sundered Onyx",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_black",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "senseis_sundered_onyx_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 22
+      },
+      {
+        "type": "crit",
+        "amount": 22
+      }
+    ]
+  },
+  {
+    "id": 6455,
+    "displayName": "62 Mast",
+    "spellIcon": "",
+    "itemId": 192965,
+    "itemName": "Fractured Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "fractured_neltharite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 62
+      }
+    ]
+  },
+  {
+    "id": 6452,
+    "displayName": "49 Mast / 23 Crit",
+    "spellIcon": "",
+    "itemId": 192956,
+    "itemName": "Sensei's Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "senseis_neltharite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 49
+      },
+      {
+        "type": "crit",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6449,
+    "displayName": "49 Mast / 23 Haste",
+    "spellIcon": "",
+    "itemId": 192959,
+    "itemName": "Keen Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "keen_neltharite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 49
+      },
+      {
+        "type": "haste",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6446,
+    "displayName": "49 Mast / 23 Vers",
+    "spellIcon": "",
+    "itemId": 192962,
+    "itemName": "Zen Neltharite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_black",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "zen_neltharite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 49
+      },
+      {
+        "type": "vers",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6407,
+    "displayName": "18 Mast / 18 Crit",
+    "spellIcon": "",
+    "itemId": 192910,
+    "itemName": "Sensei's Sundered Onyx",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_black",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "senseis_sundered_onyx_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "mastery",
+        "amount": 18
+      },
+      {
+        "type": "crit",
+        "amount": 18
+      }
+    ]
+  },
+  {
+    "id": 6433,
+    "displayName": "88 Vers",
+    "spellIcon": "",
+    "itemId": 192942,
+    "itemName": "Stormy Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "stormy_malygite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 88
+      }
+    ]
+  },
+  {
+    "id": 6430,
+    "displayName": "70 Vers / 33 Crit",
+    "spellIcon": "",
+    "itemId": 192932,
+    "itemName": "Radiant Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "radiant_malygite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 70
+      },
+      {
+        "type": "crit",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6424,
+    "displayName": "70 Vers / 33 Haste",
+    "spellIcon": "",
+    "itemId": 192935,
+    "itemName": "Energized Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "energized_malygite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 70
+      },
+      {
+        "type": "haste",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6427,
+    "displayName": "70 Vers / 33 Mast",
+    "spellIcon": "",
+    "itemId": 192938,
+    "itemName": "Zen Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "zen_malygite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 70
+      },
+      {
+        "type": "mastery",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6403,
+    "displayName": "26 Vers / 26 Mast",
+    "spellIcon": "",
+    "itemId": 192905,
+    "itemName": "Zen Mystic Sapphire",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_blue",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "zen_mystic_sapphire_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 26
+      },
+      {
+        "type": "mastery",
+        "amount": 26
+      }
+    ]
+  },
+  {
+    "id": 6432,
+    "displayName": "75 Vers",
+    "spellIcon": "",
+    "itemId": 192941,
+    "itemName": "Stormy Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "stormy_malygite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 75
+      }
+    ]
+  },
+  {
+    "id": 6429,
+    "displayName": "60 Vers / 28 Crit",
+    "spellIcon": "",
+    "itemId": 192931,
+    "itemName": "Radiant Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "radiant_malygite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 60
+      },
+      {
+        "type": "crit",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6423,
+    "displayName": "60 Vers / 28 Haste",
+    "spellIcon": "",
+    "itemId": 192934,
+    "itemName": "Energized Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "energized_malygite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 60
+      },
+      {
+        "type": "haste",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6426,
+    "displayName": "60 Vers / 28 Mast",
+    "spellIcon": "",
+    "itemId": 192937,
+    "itemName": "Zen Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "zen_malygite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 60
+      },
+      {
+        "type": "mastery",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6402,
+    "displayName": "22 Vers / 22 Mast",
+    "spellIcon": "",
+    "itemId": 192904,
+    "itemName": "Zen Mystic Sapphire",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_blue",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "zen_mystic_sapphire_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 22
+      },
+      {
+        "type": "mastery",
+        "amount": 22
+      }
+    ]
+  },
+  {
+    "id": 6431,
+    "displayName": "62 Vers",
+    "spellIcon": "",
+    "itemId": 192940,
+    "itemName": "Stormy Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "stormy_malygite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 62
+      }
+    ]
+  },
+  {
+    "id": 6428,
+    "displayName": "49 Vers / 23 Crit",
+    "spellIcon": "",
+    "itemId": 192929,
+    "itemName": "Radiant Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "radiant_malygite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 49
+      },
+      {
+        "type": "crit",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6422,
+    "displayName": "49 Vers / 23 Haste",
+    "spellIcon": "",
+    "itemId": 192933,
+    "itemName": "Energized Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "energized_malygite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 49
+      },
+      {
+        "type": "haste",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6425,
+    "displayName": "49 Vers / 23 Mast",
+    "spellIcon": "",
+    "itemId": 192936,
+    "itemName": "Zen Malygite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_blue",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "zen_malygite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 49
+      },
+      {
+        "type": "mastery",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6401,
+    "displayName": "18 Vers / 18 Mast",
+    "spellIcon": "",
+    "itemId": 192903,
+    "itemName": "Zen Mystic Sapphire",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_blue",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "zen_mystic_sapphire_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "vers",
+        "amount": 18
+      },
+      {
+        "type": "mastery",
+        "amount": 18
+      }
+    ]
+  },
+  {
+    "id": 6460,
+    "displayName": "127 Sta / 33 Crit",
+    "spellIcon": "",
+    "itemId": 192970,
+    "itemName": "Jagged Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "jagged_nozdorite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 127
+      },
+      {
+        "type": "crit",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6463,
+    "displayName": "127 Sta / 33 Haste",
+    "spellIcon": "",
+    "itemId": 192973,
+    "itemName": "Forceful Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "forceful_nozdorite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 127
+      },
+      {
+        "type": "haste",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6466,
+    "displayName": "127 Sta / 33 Mast",
+    "spellIcon": "",
+    "itemId": 192976,
+    "itemName": "Puissant Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "puissant_nozdorite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 127
+      },
+      {
+        "type": "mastery",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6469,
+    "displayName": "127 Sta / 33 Vers",
+    "spellIcon": "",
+    "itemId": 192979,
+    "itemName": "Steady Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "steady_nozdorite_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 127
+      },
+      {
+        "type": "vers",
+        "amount": 33
+      }
+    ]
+  },
+  {
+    "id": 6412,
+    "displayName": "94 Sta",
+    "spellIcon": "",
+    "itemId": 192916,
+    "itemName": "Solid Eternity Amber",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_bronze",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 3,
+    "tokenizedName": "solid_eternity_amber_3",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 94
+      }
+    ]
+  },
+  {
+    "id": 6459,
+    "displayName": "109 Sta / 28 Crit",
+    "spellIcon": "",
+    "itemId": 192969,
+    "itemName": "Jagged Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "jagged_nozdorite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 109
+      },
+      {
+        "type": "crit",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6462,
+    "displayName": "109 Sta / 28 Haste",
+    "spellIcon": "",
+    "itemId": 192972,
+    "itemName": "Forceful Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "forceful_nozdorite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 109
+      },
+      {
+        "type": "haste",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6465,
+    "displayName": "109 Sta / 28 Mast",
+    "spellIcon": "",
+    "itemId": 192975,
+    "itemName": "Puissant Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "puissant_nozdorite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 109
+      },
+      {
+        "type": "mastery",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6468,
+    "displayName": "109 Sta / 28 Vers",
+    "spellIcon": "",
+    "itemId": 192978,
+    "itemName": "Steady Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "steady_nozdorite_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 109
+      },
+      {
+        "type": "vers",
+        "amount": 28
+      }
+    ]
+  },
+  {
+    "id": 6411,
+    "displayName": "80 Sta",
+    "spellIcon": "",
+    "itemId": 192914,
+    "itemName": "Solid Eternity Amber",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_bronze",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 2,
+    "tokenizedName": "solid_eternity_amber_2",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 80
+      }
+    ]
+  },
+  {
+    "id": 6458,
+    "displayName": "89 Sta / 23 Crit",
+    "spellIcon": "",
+    "itemId": 192968,
+    "itemName": "Jagged Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_fire_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "jagged_nozdorite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 89
+      },
+      {
+        "type": "crit",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6461,
+    "displayName": "89 Sta / 23 Haste",
+    "spellIcon": "",
+    "itemId": 192971,
+    "itemName": "Forceful Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_air_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "forceful_nozdorite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 89
+      },
+      {
+        "type": "haste",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6464,
+    "displayName": "89 Sta / 23 Mast",
+    "spellIcon": "",
+    "itemId": 192974,
+    "itemName": "Puissant Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_earth_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "puissant_nozdorite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 89
+      },
+      {
+        "type": "mastery",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6467,
+    "displayName": "89 Sta / 23 Vers",
+    "spellIcon": "",
+    "itemId": 192977,
+    "itemName": "Steady Nozdorite",
+    "itemIcon": "inv_10_jewelcrafting_gem2standard_frost_cut_bronze",
+    "quality": 3,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "steady_nozdorite_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 89
+      },
+      {
+        "type": "vers",
+        "amount": 23
+      }
+    ]
+  },
+  {
+    "id": 6410,
+    "displayName": "66 Sta",
+    "spellIcon": "",
+    "itemId": 192913,
+    "itemName": "Solid Eternity Amber",
+    "itemIcon": "inv_10_jewelcrafting_gem1leveling_cut_bronze",
+    "quality": 2,
+    "expansion": 9,
+    "craftingQuality": 1,
+    "tokenizedName": "solid_eternity_amber_1",
+    "slot": "socket",
+    "socketType": 14,
+    "stats": [
+      {
+        "type": "sta",
+        "amount": 66
+      }
+    ]
+  }
+]
