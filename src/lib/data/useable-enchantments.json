@@ -1,5 +1,23 @@
 {
-  "head": [],
+  "head": [
+    {
+      "id": 7052,
+      "displayName": "|cnITEM_EPIC_COLOR:Incandescent Essence|r",
+      "spellId": 426327,
+      "spellIcon": "icon_upgradestone_fire_legendary",
+      "itemId": 210494,
+      "itemName": "Incandescent Essence",
+      "itemIcon": "icon_upgradestone_fire_legendary",
+      "quality": 4,
+      "expansion": 9,
+      "tokenizedName": "incandescent_essence",
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 0,
+        "invTypeMask": 2
+      }
+    }
+  ],
   "neck": [],
   "shoulder": [],
   "back": [
@@ -74,6 +92,168 @@
         {
           "type": "leech",
           "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6591,
+      "baseDisplayName": "Graceful Avoidance",
+      "displayName": "Graceful Avoidance 2",
+      "spellId": 389403,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199989,
+      "itemName": "Graceful Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "graceful_avoidance_2",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6603,
+      "baseDisplayName": "Homebound Speed",
+      "displayName": "Homebound Speed 2",
+      "spellId": 389405,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199990,
+      "itemName": "Homebound Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "homebound_speed_2",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6597,
+      "baseDisplayName": "Regenerative Leech",
+      "displayName": "Regenerative Leech 2",
+      "spellId": 389404,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199991,
+      "itemName": "Regenerative Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "regenerative_leech_2",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6590,
+      "baseDisplayName": "Graceful Avoidance",
+      "displayName": "Graceful Avoidance 1",
+      "spellId": 389403,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199947,
+      "itemName": "Graceful Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "graceful_avoidance_1",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6602,
+      "baseDisplayName": "Homebound Speed",
+      "displayName": "Homebound Speed 1",
+      "spellId": 389405,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199948,
+      "itemName": "Homebound Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "homebound_speed_1",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6596,
+      "baseDisplayName": "Regenerative Leech",
+      "displayName": "Regenerative Leech 1",
+      "spellId": 389404,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199949,
+      "itemName": "Regenerative Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "regenerative_leech_1",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 75
         }
       ],
       "equipRequirements": {
@@ -161,15 +341,2457 @@
       },
       "categoryId": 1778,
       "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6588,
+      "displayName": "100 Avoidance",
+      "spellId": 389397,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199992,
+      "itemName": "Writ of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_avoidance_2",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6594,
+      "displayName": "100 Leech",
+      "spellId": 389398,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199993,
+      "itemName": "Writ of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_leech_2",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6600,
+      "displayName": "100 Speed",
+      "spellId": 389400,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199994,
+      "itemName": "Writ of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_speed_2",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6587,
+      "displayName": "75 Avoidance",
+      "spellId": 389397,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199950,
+      "itemName": "Writ of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_avoidance_1",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6593,
+      "displayName": "75 Leech",
+      "spellId": 389398,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199951,
+      "itemName": "Writ of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_leech_1",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6599,
+      "displayName": "75 Speed",
+      "spellId": 389400,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199952,
+      "itemName": "Writ of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_speed_1",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
     }
   ],
-  "chest": [],
-  "wrist": [],
+  "chest": [
+    {
+      "id": 6616,
+      "baseDisplayName": "Accelerated Agi",
+      "displayName": "Accelerated Agi 3",
+      "spellId": 389416,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200027,
+      "itemName": "Accelerated Agility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "accelerated_agility_3",
+      "stats": [
+        {
+          "type": "agi",
+          "amount": 111
+        },
+        {
+          "type": "runspeed",
+          "amount": 250
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6619,
+      "baseDisplayName": "Reserve of Int",
+      "displayName": "Reserve of Int 3",
+      "spellId": 389417,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200028,
+      "itemName": "Reserve of Intellect",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "reserve_of_intellect_3",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 111
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6622,
+      "baseDisplayName": "Sustained Str",
+      "displayName": "Sustained Str 3",
+      "spellId": 389419,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200029,
+      "itemName": "Sustained Strength",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "sustained_strength_3",
+      "stats": [
+        {
+          "type": "str",
+          "amount": 111
+        },
+        {
+          "type": "sta",
+          "amount": 375
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6625,
+      "baseDisplayName": "Waking Stats",
+      "displayName": "Waking Stats 3",
+      "spellId": 389410,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200030,
+      "itemName": "Waking Stats",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "waking_stats_3",
+      "stats": [
+        {
+          "type": "stragiint",
+          "amount": 150
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6615,
+      "baseDisplayName": "Accelerated Agi",
+      "displayName": "Accelerated Agi 2",
+      "spellId": 389416,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199985,
+      "itemName": "Accelerated Agility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "accelerated_agility_2",
+      "stats": [
+        {
+          "type": "agi",
+          "amount": 94
+        },
+        {
+          "type": "runspeed",
+          "amount": 225
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6618,
+      "baseDisplayName": "Reserve of Int",
+      "displayName": "Reserve of Int 2",
+      "spellId": 389417,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199986,
+      "itemName": "Reserve of Intellect",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "reserve_of_intellect_2",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 94
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6621,
+      "baseDisplayName": "Sustained Str",
+      "displayName": "Sustained Str 2",
+      "spellId": 389419,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199987,
+      "itemName": "Sustained Strength",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "sustained_strength_2",
+      "stats": [
+        {
+          "type": "str",
+          "amount": 94
+        },
+        {
+          "type": "sta",
+          "amount": 319
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6624,
+      "baseDisplayName": "Waking Stats",
+      "displayName": "Waking Stats 2",
+      "spellId": 389410,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199988,
+      "itemName": "Waking Stats",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "waking_stats_2",
+      "stats": [
+        {
+          "type": "stragiint",
+          "amount": 127
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6614,
+      "baseDisplayName": "Accelerated Agi",
+      "displayName": "Accelerated Agi 1",
+      "spellId": 389416,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199943,
+      "itemName": "Accelerated Agility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "accelerated_agility_1",
+      "stats": [
+        {
+          "type": "agi",
+          "amount": 77
+        },
+        {
+          "type": "runspeed",
+          "amount": 200
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6617,
+      "baseDisplayName": "Reserve of Int",
+      "displayName": "Reserve of Int 1",
+      "spellId": 389417,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199944,
+      "itemName": "Reserve of Intellect",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "reserve_of_intellect_1",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 77
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6620,
+      "baseDisplayName": "Sustained Str",
+      "displayName": "Sustained Str 1",
+      "spellId": 389419,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199945,
+      "itemName": "Sustained Strength",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "sustained_strength_1",
+      "stats": [
+        {
+          "type": "str",
+          "amount": 77
+        },
+        {
+          "type": "sta",
+          "amount": 263
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    },
+    {
+      "id": 6623,
+      "baseDisplayName": "Waking Stats",
+      "displayName": "Waking Stats 1",
+      "spellId": 389410,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199946,
+      "itemName": "Waking Stats",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "waking_stats_1",
+      "stats": [
+        {
+          "type": "stragiint",
+          "amount": 105
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 1048608
+      },
+      "categoryId": 1777,
+      "categoryName": "Chest Enchantments"
+    }
+  ],
+  "wrist": [
+    {
+      "id": 6574,
+      "displayName": "200 Avoidance",
+      "spellId": 389301,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200021,
+      "itemName": "Devotion of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "devotion_of_avoidance_3",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 200
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6580,
+      "displayName": "200 Leech",
+      "spellId": 389303,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200022,
+      "itemName": "Devotion of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "devotion_of_leech_3",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 200
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6586,
+      "displayName": "200 Speed",
+      "spellId": 389304,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200023,
+      "itemName": "Devotion of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "devotion_of_speed_3",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 200
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6573,
+      "displayName": "175 Avoidance",
+      "spellId": 389301,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199979,
+      "itemName": "Devotion of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "devotion_of_avoidance_2",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 175
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6579,
+      "displayName": "175 Leech",
+      "spellId": 389303,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199980,
+      "itemName": "Devotion of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "devotion_of_leech_2",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 175
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6585,
+      "displayName": "175 Speed",
+      "spellId": 389304,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199981,
+      "itemName": "Devotion of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "devotion_of_speed_2",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 175
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6572,
+      "displayName": "150 Avoidance",
+      "spellId": 389301,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199937,
+      "itemName": "Devotion of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "devotion_of_avoidance_1",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 150
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6578,
+      "displayName": "150 Leech",
+      "spellId": 389303,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199938,
+      "itemName": "Devotion of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "devotion_of_leech_1",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 150
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6584,
+      "displayName": "150 Speed",
+      "spellId": 389304,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199939,
+      "itemName": "Devotion of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "devotion_of_speed_1",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 150
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6571,
+      "displayName": "125 Avoidance",
+      "spellId": 389297,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200024,
+      "itemName": "Writ of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_avoidance_3",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6577,
+      "displayName": "125 Leech",
+      "spellId": 389298,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200025,
+      "itemName": "Writ of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_leech_3",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6583,
+      "displayName": "125 Speed",
+      "spellId": 389300,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200026,
+      "itemName": "Writ of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_speed_3",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6570,
+      "displayName": "100 Avoidance",
+      "spellId": 389297,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199982,
+      "itemName": "Writ of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_avoidance_2",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6576,
+      "displayName": "100 Leech",
+      "spellId": 389298,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199983,
+      "itemName": "Writ of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_leech_2",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6582,
+      "displayName": "100 Speed",
+      "spellId": 389300,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199984,
+      "itemName": "Writ of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_speed_2",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 100
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6569,
+      "displayName": "75 Avoidance",
+      "spellId": 389297,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199940,
+      "itemName": "Writ of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_avoidance_1",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6575,
+      "displayName": "75 Leech",
+      "spellId": 389298,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199941,
+      "itemName": "Writ of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_leech_1",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    },
+    {
+      "id": 6581,
+      "displayName": "75 Speed",
+      "spellId": 389300,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199942,
+      "itemName": "Writ of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_speed_1",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 75
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 512
+      },
+      "categoryId": 1776,
+      "categoryName": "Bracer Enchantments"
+    }
+  ],
   "hands": [],
-  "waist": [],
-  "legs": [],
-  "feet": [],
-  "rings": [],
+  "waist": [
+    {
+      "id": 6904,
+      "baseDisplayName": "Shadowed Belt Clasp",
+      "displayName": "Shadowed Belt Clasp 3",
+      "spellId": 411897,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 205039,
+      "itemName": "Shadowed Belt Clasp",
+      "itemIcon": "inv_10_skinning_craftedoptionalreagent_armorbuckles_color2",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "shadowed_belt_clasp_3",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 106
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 64
+      }
+    },
+    {
+      "id": 6905,
+      "baseDisplayName": "Shadowed Belt Clasp",
+      "displayName": "Shadowed Belt Clasp 2",
+      "spellId": 411898,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 205044,
+      "itemName": "Shadowed Belt Clasp",
+      "itemIcon": "inv_10_skinning_craftedoptionalreagent_armorbuckles_color2",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "shadowed_belt_clasp_2",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 92
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 64
+      }
+    },
+    {
+      "id": 6906,
+      "baseDisplayName": "Shadowed Belt Clasp",
+      "displayName": "Shadowed Belt Clasp 1",
+      "spellId": 411899,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 205043,
+      "itemName": "Shadowed Belt Clasp",
+      "itemIcon": "inv_10_skinning_craftedoptionalreagent_armorbuckles_color2",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "shadowed_belt_clasp_1",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 74
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 64
+      }
+    }
+  ],
+  "legs": [
+    {
+      "id": 6830,
+      "displayName": "155 Primary & 41 Vers",
+      "spellId": 406299,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_lambent",
+      "itemId": 204702,
+      "itemName": "Lambent Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_lambent",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "lambent_armor_kit_3",
+      "stats": [
+        {
+          "type": "stragiint",
+          "amount": 155
+        },
+        {
+          "type": "vers",
+          "amount": 41
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6490,
+      "displayName": "177 Agi/Str & 131 Sta",
+      "spellId": 376848,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193565,
+      "itemName": "Fierce Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color3",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "fierce_armor_kit_3",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 131
+        },
+        {
+          "type": "stragi",
+          "amount": 177
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6496,
+      "displayName": "177 Agi/Str & 141 Armor",
+      "spellId": 376847,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193564,
+      "itemName": "Frosted Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "frosted_armor_kit_3",
+      "stats": [
+        {
+          "type": "stragi",
+          "amount": 177
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6493,
+      "displayName": "106 Agi/Str",
+      "spellId": 376849,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193567,
+      "itemName": "Reinforced Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color1",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "reinforced_armor_kit_3",
+      "stats": [
+        {
+          "type": "stragi",
+          "amount": 106
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6829,
+      "displayName": "128 Primary & 39 Vers",
+      "spellId": 406298,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_lambent",
+      "itemId": 204701,
+      "itemName": "Lambent Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_lambent",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "lambent_armor_kit_2",
+      "stats": [
+        {
+          "type": "stragiint",
+          "amount": 128
+        },
+        {
+          "type": "vers",
+          "amount": 39
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6489,
+      "displayName": "151 Agi/Str & 111 Sta",
+      "spellId": 376844,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193561,
+      "itemName": "Fierce Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color3",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "fierce_armor_kit_2",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 111
+        },
+        {
+          "type": "stragi",
+          "amount": 151
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6495,
+      "displayName": "151 Agi/Str & 120 Armor",
+      "spellId": 376845,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193560,
+      "itemName": "Frosted Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "frosted_armor_kit_2",
+      "stats": [
+        {
+          "type": "stragi",
+          "amount": 151
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6492,
+      "displayName": "90 Agi/Str",
+      "spellId": 376843,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193563,
+      "itemName": "Reinforced Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color1",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "reinforced_armor_kit_2",
+      "stats": [
+        {
+          "type": "stragi",
+          "amount": 90
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6828,
+      "displayName": "102 Primary & 37 Vers",
+      "spellId": 406295,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_lambent",
+      "itemId": 204700,
+      "itemName": "Lambent Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_lambent",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "lambent_armor_kit_1",
+      "stats": [
+        {
+          "type": "stragiint",
+          "amount": 102
+        },
+        {
+          "type": "vers",
+          "amount": 37
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6488,
+      "displayName": "124 Agi/Str & 92 Sta",
+      "spellId": 376822,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193557,
+      "itemName": "Fierce Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color3",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "fierce_armor_kit_1",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 92
+        },
+        {
+          "type": "stragi",
+          "amount": 124
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6494,
+      "displayName": "124 Agi/Str & 99 Armor",
+      "spellId": 376819,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193556,
+      "itemName": "Frosted Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "frosted_armor_kit_1",
+      "stats": [
+        {
+          "type": "stragi",
+          "amount": 124
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6491,
+      "displayName": "74 Agi/Str",
+      "spellId": 376839,
+      "spellIcon": "inv_10_skinning_consumable_armorkit_color2",
+      "itemId": 193559,
+      "itemName": "Reinforced Armor Kit",
+      "itemIcon": "inv_10_skinning_consumable_armorkit_color1",
+      "quality": 1,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "reinforced_armor_kit_1",
+      "stats": [
+        {
+          "type": "stragi",
+          "amount": 74
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6541,
+      "displayName": "177 Int & 131 Sta",
+      "spellId": 387294,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "itemId": 194013,
+      "itemName": "Frozen Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color2",
+      "quality": 4,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "frozen_spellthread_3",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 177
+        },
+        {
+          "type": "sta",
+          "amount": 131
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6544,
+      "displayName": "177 Int & +5% Mana",
+      "spellId": 387298,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color1",
+      "itemId": 194016,
+      "itemName": "Temporal Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color1",
+      "quality": 4,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "temporal_spellthread_3",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 177
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6538,
+      "displayName": "106 Int",
+      "spellId": 387286,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "itemId": 194010,
+      "itemName": "Vibrant Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "vibrant_spellthread_3",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 106
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6540,
+      "displayName": "151 Int & 111 Sta",
+      "spellId": 387293,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "itemId": 194012,
+      "itemName": "Frozen Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color2",
+      "quality": 4,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "frozen_spellthread_2",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 151
+        },
+        {
+          "type": "sta",
+          "amount": 111
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6543,
+      "displayName": "151 Int & +4% Mana",
+      "spellId": 387296,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color1",
+      "itemId": 194015,
+      "itemName": "Temporal Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color1",
+      "quality": 4,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "temporal_spellthread_2",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 151
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6537,
+      "displayName": "90 Int",
+      "spellId": 387285,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "itemId": 194009,
+      "itemName": "Vibrant Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "vibrant_spellthread_2",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 90
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6539,
+      "displayName": "124 Int & 92 Sta",
+      "spellId": 387291,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color2",
+      "itemId": 194011,
+      "itemName": "Frozen Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color2",
+      "quality": 4,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "frozen_spellthread_1",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 124
+        },
+        {
+          "type": "sta",
+          "amount": 92
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6542,
+      "displayName": "124 Int & +3% Mana",
+      "spellId": 387295,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color1",
+      "itemId": 194014,
+      "itemName": "Temporal Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color1",
+      "quality": 4,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "temporal_spellthread_1",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 124
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    },
+    {
+      "id": 6536,
+      "displayName": "74 Int",
+      "spellId": 387284,
+      "spellIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "itemId": 194008,
+      "itemName": "Vibrant Spellthread",
+      "itemIcon": "inv_10_tailoring_craftingoptionalreagent_enhancedspellthread_color3",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "vibrant_spellthread_1",
+      "stats": [
+        {
+          "type": "int",
+          "amount": 74
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 30,
+        "invTypeMask": 128
+      }
+    }
+  ],
+  "feet": [
+    {
+      "id": 6607,
+      "baseDisplayName": "Plainsrunner's Breeze",
+      "displayName": "Plainsrunner's Breeze 3",
+      "spellId": 389479,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200018,
+      "itemName": "Plainsrunner's Breeze",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "plainsrunners_breeze_3",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 250
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6610,
+      "baseDisplayName": "Rider's Reassurance",
+      "displayName": "Rider's Reassurance 3",
+      "spellId": 389480,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200019,
+      "itemName": "Rider's Reassurance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "riders_reassurance_3",
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6606,
+      "baseDisplayName": "Plainsrunner's Breeze",
+      "displayName": "Plainsrunner's Breeze 2",
+      "spellId": 389479,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199976,
+      "itemName": "Plainsrunner's Breeze",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "plainsrunners_breeze_2",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 225
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6609,
+      "baseDisplayName": "Rider's Reassurance",
+      "displayName": "Rider's Reassurance 2",
+      "spellId": 389480,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199977,
+      "itemName": "Rider's Reassurance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "riders_reassurance_2",
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6605,
+      "baseDisplayName": "Plainsrunner's Breeze",
+      "displayName": "Plainsrunner's Breeze 1",
+      "spellId": 389479,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199934,
+      "itemName": "Plainsrunner's Breeze",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "plainsrunners_breeze_1",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 200
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6608,
+      "baseDisplayName": "Rider's Reassurance",
+      "displayName": "Rider's Reassurance 1",
+      "spellId": 389480,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199935,
+      "itemName": "Rider's Reassurance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "riders_reassurance_1",
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6613,
+      "baseDisplayName": "Watcher's Loam",
+      "displayName": "Watcher's Loam 3",
+      "spellId": 389484,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200020,
+      "itemName": "Watcher's Loam",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "watchers_loam_3",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 131
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6612,
+      "baseDisplayName": "Watcher's Loam",
+      "displayName": "Watcher's Loam 2",
+      "spellId": 389484,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199978,
+      "itemName": "Watcher's Loam",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "watchers_loam_2",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 111
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    },
+    {
+      "id": 6611,
+      "baseDisplayName": "Watcher's Loam",
+      "displayName": "Watcher's Loam 1",
+      "spellId": 389484,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199936,
+      "itemName": "Watcher's Loam",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "watchers_loam_1",
+      "stats": [
+        {
+          "type": "sta",
+          "amount": 92
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 256
+      },
+      "categoryId": 1775,
+      "categoryName": "Boot Enchantments"
+    }
+  ],
+  "rings": [
+    {
+      "id": 6550,
+      "displayName": "82 Crit",
+      "spellId": 389292,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200037,
+      "itemName": "Devotion of Critical Strike",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "devotion_of_critical_strike_3",
+      "stats": [
+        {
+          "type": "crit",
+          "amount": 82
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6556,
+      "displayName": "82 Haste",
+      "spellId": 389293,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200038,
+      "itemName": "Devotion of Haste",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "devotion_of_haste_3",
+      "stats": [
+        {
+          "type": "haste",
+          "amount": 82
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6562,
+      "displayName": "82 Mast",
+      "spellId": 389294,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200039,
+      "itemName": "Devotion of Mastery",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "devotion_of_mastery_3",
+      "stats": [
+        {
+          "type": "mastery",
+          "amount": 82
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6568,
+      "displayName": "82 Vers",
+      "spellId": 389295,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200040,
+      "itemName": "Devotion of Versatility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "devotion_of_versatility_3",
+      "stats": [
+        {
+          "type": "vers",
+          "amount": 82
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6549,
+      "displayName": "73 Crit",
+      "spellId": 389292,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199995,
+      "itemName": "Devotion of Critical Strike",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "devotion_of_critical_strike_2",
+      "stats": [
+        {
+          "type": "crit",
+          "amount": 73
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6555,
+      "displayName": "73 Haste",
+      "spellId": 389293,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199996,
+      "itemName": "Devotion of Haste",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "devotion_of_haste_2",
+      "stats": [
+        {
+          "type": "haste",
+          "amount": 73
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6561,
+      "displayName": "73 Mast",
+      "spellId": 389294,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199997,
+      "itemName": "Devotion of Mastery",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "devotion_of_mastery_2",
+      "stats": [
+        {
+          "type": "mastery",
+          "amount": 73
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6567,
+      "displayName": "73 Vers",
+      "spellId": 389295,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199998,
+      "itemName": "Devotion of Versatility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "devotion_of_versatility_2",
+      "stats": [
+        {
+          "type": "vers",
+          "amount": 73
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6548,
+      "displayName": "64 Crit",
+      "spellId": 389292,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199953,
+      "itemName": "Devotion of Critical Strike",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "devotion_of_critical_strike_1",
+      "stats": [
+        {
+          "type": "crit",
+          "amount": 64
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6554,
+      "displayName": "64 Haste",
+      "spellId": 389293,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199954,
+      "itemName": "Devotion of Haste",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "devotion_of_haste_1",
+      "stats": [
+        {
+          "type": "haste",
+          "amount": 64
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6560,
+      "displayName": "64 Mast",
+      "spellId": 389294,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199955,
+      "itemName": "Devotion of Mastery",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "devotion_of_mastery_1",
+      "stats": [
+        {
+          "type": "mastery",
+          "amount": 64
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6566,
+      "displayName": "64 Vers",
+      "spellId": 389295,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199956,
+      "itemName": "Devotion of Versatility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "devotion_of_versatility_1",
+      "stats": [
+        {
+          "type": "vers",
+          "amount": 64
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6547,
+      "displayName": "55 Crit",
+      "spellId": 388930,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200041,
+      "itemName": "Writ of Critical Strike",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_critical_strike_3",
+      "stats": [
+        {
+          "type": "crit",
+          "amount": 55
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6553,
+      "displayName": "55 Haste",
+      "spellId": 389135,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200042,
+      "itemName": "Writ of Haste",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_haste_3",
+      "stats": [
+        {
+          "type": "haste",
+          "amount": 55
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6559,
+      "displayName": "55 Mast",
+      "spellId": 389136,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200043,
+      "itemName": "Writ of Mastery",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_mastery_3",
+      "stats": [
+        {
+          "type": "mastery",
+          "amount": 55
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6565,
+      "displayName": "55 Vers",
+      "spellId": 389151,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200044,
+      "itemName": "Writ of Versatility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_versatility_3",
+      "stats": [
+        {
+          "type": "vers",
+          "amount": 55
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6546,
+      "displayName": "45 Crit",
+      "spellId": 388930,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199999,
+      "itemName": "Writ of Critical Strike",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_critical_strike_2",
+      "stats": [
+        {
+          "type": "crit",
+          "amount": 45
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6552,
+      "displayName": "45 Haste",
+      "spellId": 389135,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200000,
+      "itemName": "Writ of Haste",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_haste_2",
+      "stats": [
+        {
+          "type": "haste",
+          "amount": 45
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6558,
+      "displayName": "45 Mast",
+      "spellId": 389136,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200001,
+      "itemName": "Writ of Mastery",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_mastery_2",
+      "stats": [
+        {
+          "type": "mastery",
+          "amount": 45
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6564,
+      "displayName": "45 Vers",
+      "spellId": 389151,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200002,
+      "itemName": "Writ of Versatility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 2,
+      "tokenizedName": "writ_of_versatility_2",
+      "stats": [
+        {
+          "type": "vers",
+          "amount": 45
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6545,
+      "displayName": "35 Crit",
+      "spellId": 388930,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199957,
+      "itemName": "Writ of Critical Strike",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_critical_strike_1",
+      "stats": [
+        {
+          "type": "crit",
+          "amount": 35
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6551,
+      "displayName": "35 Haste",
+      "spellId": 389135,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199958,
+      "itemName": "Writ of Haste",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_haste_1",
+      "stats": [
+        {
+          "type": "haste",
+          "amount": 35
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6557,
+      "displayName": "35 Mast",
+      "spellId": 389136,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199959,
+      "itemName": "Writ of Mastery",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_mastery_1",
+      "stats": [
+        {
+          "type": "mastery",
+          "amount": 35
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    },
+    {
+      "id": 6563,
+      "displayName": "35 Vers",
+      "spellId": 389151,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 199960,
+      "itemName": "Writ of Versatility",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 1,
+      "tokenizedName": "writ_of_versatility_1",
+      "stats": [
+        {
+          "type": "vers",
+          "amount": 35
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 2048
+      },
+      "categoryId": 1774,
+      "categoryName": "Ring Enchantments"
+    }
+  ],
   "trinkets": [],
   "main_hand": [
     {

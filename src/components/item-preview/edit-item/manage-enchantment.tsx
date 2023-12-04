@@ -26,23 +26,6 @@ import sugmaData from "@/lib/data/enchantments.json"
 import { EnchantmentPreview } from "../enchantment-preview"
 import { useState } from "react"
 
-const enchantDict = {
-  head: [],
-  neck: [],
-  shoulder: [],
-  back: [200031, 200032, 200033, 200034, 200035, 200036],
-  chest: [],
-  wrist: [],
-  hands: [],
-  waist: [],
-  legs: [],
-  feet: [],
-  rings: [],
-  trinkets: [],
-  main_hand: [],
-  off_hand: [],
-}
-
 export function ManageEnchantment({ item }: { item: GearItemSchema }) {
   const form = useFormContext<GearOutputSchema>()
 
@@ -59,10 +42,9 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
   })
 
   const wepIds = [
-    207087, 204623, 200050, 200052, 200054, 200056, 200058, 207086, 204622,
-    200008, 200010, 200012, 200014, 200016, 207085, 204621, 199966, 199968,
-    199970, 199972, 199974, 200051, 200053, 200055, 200057, 200059, 200009,
-    200011, 200013, 200015, 200017, 199967, 199969, 199971, 199973, 199975,
+    200037, 200038, 200039, 200040, 199995, 199996, 199997, 199998, 199953,
+    199954, 199955, 199956, 200041, 200042, 200043, 200044, 199999, 200000,
+    200001, 200002, 199957, 199958, 199959, 199960,
   ]
 
   const wepEnchants = wepIds.map((id) => {

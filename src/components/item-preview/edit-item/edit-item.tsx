@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui"
-import { isSocketable } from "@/lib/wow"
+import { isEnchantable, isSocketable } from "@/lib/wow"
 import { GearItemSchema } from "@/schemas"
 import { PenBox, Trash2, CopyPlus } from "lucide-react"
 import { ManageSocket } from "./mange-socket"
@@ -35,7 +35,7 @@ export function EditItem({ item }: { item: GearItemSchema }) {
         </DialogHeader>
         <ItemPreview item={item} noAction />
         {isSocketable(item.inventoryType) && <ManageSocket item={item} />}
-        <ManageEnchantment item={item} />
+        {isEnchantable(item.inventoryType) && <ManageEnchantment item={item} />}
         <div className="grid grid-cols-2 gap-x-4">
           <Button className="flex w-full flex-row">
             <CopyPlus className="mr-2 h-4 w-4" />

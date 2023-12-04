@@ -12,3 +12,7 @@ function isSocketed(item: GearItemSchema) {
 export function isSocketAddable(item: GearItemSchema) {
   return isSocketable(item.inventoryType) && !isSocketed(item)
 }
+
+export function isEnchantable(inventoryType: number) {
+  return [1, 16, 5, 8, 11, 13, 7, 6, 9].includes(inventoryType)
+}
