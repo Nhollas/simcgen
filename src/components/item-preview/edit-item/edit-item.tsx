@@ -3,15 +3,9 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  Input,
-  Label,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
 } from "@/components/ui"
 import { isSocketable } from "@/lib/wow"
 import { GearItemSchema } from "@/schemas"

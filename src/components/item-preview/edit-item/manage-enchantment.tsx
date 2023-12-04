@@ -5,6 +5,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandList,
   FormControl,
   FormDescription,
   FormField,
@@ -21,6 +22,7 @@ import { GearItemSchema, GearOutputSchema } from "@/schemas"
 import { CheckIcon, ChevronsUpDown } from "lucide-react"
 import { useFieldArray, useFormContext } from "react-hook-form"
 import enchantmentsData from "@/lib/data/useable-enchantments.json"
+import sugmaData from "@/lib/data/enchantments.json"
 import { EnchantmentPreview } from "../enchantment-preview"
 import { useState } from "react"
 
@@ -46,14 +48,29 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
 
   const slot = inventoryTypeToSlot(item.inventoryType)
 
+  console.log(slot)
+
   const [open, setOpen] = useState(false)
-  const [value, setValue] = useState("")
 
   const { fields } = useFieldArray({
     control: form.control,
     name: `gearInfo.${slot}`,
     keyName: "useFieldArrayId",
   })
+
+  const wepIds = [
+    207087, 204623, 200050, 200052, 200054, 200056, 200058, 207086, 204622,
+    200008, 200010, 200012, 200014, 200016, 207085, 204621, 199966, 199968,
+    199970, 199972, 199974, 200051, 200053, 200055, 200057, 200059, 200009,
+    200011, 200013, 200015, 200017, 199967, 199969, 199971, 199973, 199975,
+  ]
+
+  const wepEnchants = wepIds.map((id) => {
+    const enchant = sugmaData.find((enchant) => enchant.itemId === id)
+    return enchant
+  })
+
+  console.log("wepEnchants", wepEnchants)
 
   const index = fields.findIndex((field) => field.unique_id === item.unique_id)
 
@@ -92,8 +109,9 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
                   placeholder="Search enchantment..."
                   className="h-9"
                 />
-                <CommandEmpty>No enchantment found.</CommandEmpty>
-                <CommandGroup>
+
+                <CommandList className="max-h-72 overscroll-scroll">
+                  <CommandEmpty>No enchantment found.</CommandEmpty>
                   {enchantments.map((enchantment) => (
                     <CommandItem
                       value={`${enchantment.displayName}:${enchantment.id}`}
@@ -123,7 +141,7 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
                       />
                     </CommandItem>
                   ))}
-                </CommandGroup>
+                </CommandList>
               </Command>
             </PopoverContent>
           </Popover>
