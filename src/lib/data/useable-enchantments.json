@@ -1,0 +1,176 @@
+{
+  "head": [],
+  "neck": [],
+  "shoulder": [],
+  "back": [
+    {
+      "id": 6592,
+      "baseDisplayName": "Graceful Avoidance",
+      "displayName": "Graceful Avoidance 3",
+      "spellId": 389403,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200031,
+      "itemName": "Graceful Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "graceful_avoidance_3",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6604,
+      "baseDisplayName": "Homebound Speed",
+      "displayName": "Homebound Speed 3",
+      "spellId": 389405,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200032,
+      "itemName": "Homebound Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "homebound_speed_3",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6598,
+      "baseDisplayName": "Regenerative Leech",
+      "displayName": "Regenerative Leech 3",
+      "spellId": 389404,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200033,
+      "itemName": "Regenerative Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 3,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "regenerative_leech_3",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6589,
+      "displayName": "125 Avoidance",
+      "spellId": 389397,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200034,
+      "itemName": "Writ of Avoidance",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_avoidance_3",
+      "stats": [
+        {
+          "type": "avoidance",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6595,
+      "displayName": "125 Leech",
+      "spellId": 389398,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200035,
+      "itemName": "Writ of Leech",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_leech_3",
+      "stats": [
+        {
+          "type": "leech",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    },
+    {
+      "id": 6601,
+      "displayName": "125 Speed",
+      "spellId": 389400,
+      "spellIcon": "ui_profession_enchanting",
+      "itemId": 200036,
+      "itemName": "Writ of Speed",
+      "itemIcon": "inv_misc_enchantedscroll",
+      "quality": 2,
+      "expansion": 9,
+      "craftingQuality": 3,
+      "tokenizedName": "writ_of_speed_3",
+      "stats": [
+        {
+          "type": "runspeed",
+          "amount": 125
+        }
+      ],
+      "equipRequirements": {
+        "itemClass": 4,
+        "itemSubClassMask": 31,
+        "invTypeMask": 65536
+      },
+      "categoryId": 1778,
+      "categoryName": "Cloak Enchantments"
+    }
+  ],
+  "chest": [],
+  "wrist": [],
+  "hands": [],
+  "waist": [],
+  "legs": [],
+  "feet": [],
+  "rings": [],
+  "trinkets": [],
+  "main_hand": [],
+  "off_hand": []
+}

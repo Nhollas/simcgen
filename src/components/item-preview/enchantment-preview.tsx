@@ -20,9 +20,9 @@ export function EnchantmentPreview({
   }
 
   return (
-    <div className="flex flex-row items-center gap-x-1 truncate">
-      <Button
-        className="h-6 w-6 flex-none rounded-md p-0.5"
+    <div className="flex flex-row items-center gap-x-2 truncate">
+      <div
+        className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-6 w-6 flex-none rounded-md p-0.5"
         style={{
           backgroundColor: qualityTypeToColour(enchantment.quality || 0),
           color: "white",
@@ -47,7 +47,7 @@ export function EnchantmentPreview({
             />
           )}
         </Link>
-      </Button>
+      </div>
       <p
         className="hidden truncate text-sm leading-4 sm:block"
         style={{

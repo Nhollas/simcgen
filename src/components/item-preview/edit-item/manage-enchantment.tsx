@@ -18,17 +18,36 @@ import {
 import { inventoryTypeToSlot } from "@/lib/raidbots"
 import { cn } from "@/lib/utils"
 import { GearItemSchema, GearOutputSchema } from "@/schemas"
-import { ChevronsUpDown } from "lucide-react"
+import { CheckIcon, ChevronsUpDown } from "lucide-react"
 import { useFieldArray, useFormContext } from "react-hook-form"
-import enchantmentsData from "@/lib/data/enchantments.json"
+import enchantmentsData from "@/lib/data/useable-enchantments.json"
 import { EnchantmentPreview } from "../enchantment-preview"
+import { useState } from "react"
+
+const enchantDict = {
+  head: [],
+  neck: [],
+  shoulder: [],
+  back: [200031, 200032, 200033, 200034, 200035, 200036],
+  chest: [],
+  wrist: [],
+  hands: [],
+  waist: [],
+  legs: [],
+  feet: [],
+  rings: [],
+  trinkets: [],
+  main_hand: [],
+  off_hand: [],
+}
 
 export function ManageEnchantment({ item }: { item: GearItemSchema }) {
   const form = useFormContext<GearOutputSchema>()
 
-  console.log("form", form)
-
   const slot = inventoryTypeToSlot(item.inventoryType)
+
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState("")
 
   const { fields } = useFieldArray({
     control: form.control,
@@ -38,12 +57,7 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
 
   const index = fields.findIndex((field) => field.unique_id === item.unique_id)
 
-  const enchantments = enchantmentsData.find(
-    (enchantment) => enchantment.slot === slot,
-  )
-
-  console.log("enchantments", enchantments)
-
+  const enchantments = enchantmentsData[slot]
   return (
     <FormField
       control={form.control}
@@ -51,14 +65,15 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
       render={({ field }) => (
         <FormItem className="flex flex-col">
           <FormLabel>Enchant</FormLabel>
-          <Popover>
+          <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
               <FormControl>
                 <Button
                   variant="outline"
                   role="combobox"
+                  aria-expanded={open}
                   className={cn(
-                    "w-[200px] justify-between",
+                    "justify-between",
                     !field.value && "text-muted-foreground",
                   )}
                 >
@@ -67,49 +82,51 @@ export function ManageEnchantment({ item }: { item: GearItemSchema }) {
                   ) : (
                     "Select enchantment"
                   )}
-                  {/* {field.value
-                    ? languages.find(
-                        (language) => language.value === field.value,
-                      )?.label
-                    : "Select language"} */}
                   <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
               </FormControl>
             </PopoverTrigger>
-            <PopoverContent className="w-[200px] p-0">
+            <PopoverContent className="w-full p-0">
               <Command>
                 <CommandInput
-                  placeholder="Search framework..."
+                  placeholder="Search enchantment..."
                   className="h-9"
                 />
-                <CommandEmpty>No framework found.</CommandEmpty>
+                <CommandEmpty>No enchantment found.</CommandEmpty>
                 <CommandGroup>
-                  {/* {languages.map((language) => (
+                  {enchantments.map((enchantment) => (
                     <CommandItem
-                      value={language.label}
-                      key={language.value}
-                      onSelect={() => {
-                        form.setValue("language", language.value)
+                      value={`${enchantment.displayName}:${enchantment.id}`}
+                      key={enchantment.id}
+                      className="gap-x-4"
+                      onSelect={(value) => {
+                        const [enchantmentName, enchantmentId] =
+                          value.split(":")
+                        form.setValue(
+                          `gearInfo.${slot}.${index}.enchant_id`,
+                          enchantmentId,
+                        )
+
+                        setOpen(false)
                       }}
                     >
-                      {language.label}
+                      <EnchantmentPreview
+                        enchantmentId={enchantment.id.toString()}
+                      />
                       <CheckIcon
                         className={cn(
                           "ml-auto h-4 w-4",
-                          language.value === field.value
+                          field.value === enchantment.id.toString()
                             ? "opacity-100"
                             : "opacity-0",
                         )}
                       />
                     </CommandItem>
-                  ))} */}
+                  ))}
                 </CommandGroup>
               </Command>
             </PopoverContent>
           </Popover>
-          <FormDescription>
-            This is the language that will be used in the dashboard.
-          </FormDescription>
           <FormMessage />
         </FormItem>
       )}
