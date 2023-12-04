@@ -6,12 +6,10 @@ import { qualityTypeToColour } from "@/lib/raidbots"
 export function EnchantmentPreview({
   enchantmentId,
 }: {
-  enchantmentId: string
+  enchantmentId: number
 }) {
-  let enchantmentIdAsNumber = parseInt(enchantmentId)
-
   const enchantment = enchantments.find(
-    (enchantment) => enchantment.id === enchantmentIdAsNumber,
+    (enchantment) => enchantment.id === enchantmentId,
   )
 
   if (!enchantment) {
@@ -37,7 +35,7 @@ export function EnchantmentPreview({
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt={enchantment.displayName}
           />
-          {enchantment?.craftingQuality && (
+          {enchantment.craftingQuality && (
             <Image
               src={`https://www.raidbots.com/images/crafting-quality-${enchantment.craftingQuality}.png`}
               fill
@@ -48,7 +46,7 @@ export function EnchantmentPreview({
         </Link>
       </div>
       <p
-        className="hidden truncate text-sm leading-4 sm:block"
+        className="truncate text-sm leading-4"
         style={{
           color: qualityTypeToColour(2),
         }}

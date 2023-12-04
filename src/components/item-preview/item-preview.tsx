@@ -16,6 +16,8 @@ export function ItemPreview({
   item: GearItemSchema
   noAction?: boolean
 }) {
+  console.log("item", item)
+
   return (
     <div
       className={clsx(
@@ -51,13 +53,13 @@ export function ItemPreview({
           </h1>
           {item.equipped && <Badge className="bg-yellow-500">Equipped</Badge>}
         </div>
-        <div className="flex flex-row items-center gap-x-2">
+        <div className="flex flex-row items-center gap-x-2 h-6">
           <p className="flex-shrink-0 text-sm leading-3">{item.itemLevel}</p>
           {item.socketInfo.PRISMATIC && (
             <GemPreviews gems={item.socketInfo.PRISMATIC.gems} />
           )}
           {item.enchant_id && (
-            <EnchantmentPreview enchantmentId={item.enchant_id} />
+            <EnchantmentPreview enchantmentId={parseInt(item.enchant_id)} />
           )}
         </div>
       </div>

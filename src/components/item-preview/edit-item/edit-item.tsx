@@ -8,13 +8,17 @@ import {
   DialogTrigger,
 } from "@/components/ui"
 import { isEnchantable, isSocketable } from "@/lib/wow"
-import { GearItemSchema } from "@/schemas"
+import { GearItemSchema, GearOutputSchema } from "@/schemas"
 import { PenBox, Trash2, CopyPlus } from "lucide-react"
 import { ManageSocket } from "./mange-socket"
 import { ItemPreview } from "../item-preview"
 import { ManageEnchantment } from "./manage-enchantment"
+import { useFormContext } from "react-hook-form"
 
 export function EditItem({ item }: { item: GearItemSchema }) {
+  // Need to use parent form context to pass down. Otherwise, the form context gets out of sync. ??
+  const form = useFormContext<any, GearOutputSchema>()
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -34,8 +38,12 @@ export function EditItem({ item }: { item: GearItemSchema }) {
           </DialogDescription>
         </DialogHeader>
         <ItemPreview item={item} noAction />
-        {isSocketable(item.inventoryType) && <ManageSocket item={item} />}
-        {isEnchantable(item.inventoryType) && <ManageEnchantment item={item} />}
+        {isSocketable(item.inventoryType) && (
+          <ManageSocket form={form} item={item} />
+        )}
+        {isEnchantable(item.inventoryType) && (
+          <ManageEnchantment form={form} item={item} />
+        )}
         <div className="grid grid-cols-2 gap-x-4">
           <Button className="flex w-full flex-row">
             <CopyPlus className="mr-2 h-4 w-4" />

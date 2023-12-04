@@ -13,7 +13,7 @@ export function GemPreview({ gemId }: { gemId: number }) {
   }
 
   return (
-    <div className="flex flex-row gap-x-2">
+    <div className="flex flex-row gap-x-2 items-center">
       <Button
         className="h-6 w-6 rounded-md p-0.5"
         style={{
