@@ -180,7 +180,7 @@ const gearSlots = {
   trinkets: 12,
 }
 
-type GearSlot = keyof typeof gearSlots
+export type GearSlot = keyof typeof gearSlots
 
 export function inventoryTypeToSlot(inventoryType: number) {
   type InventoryTypeMap = Record<number, GearSlot>

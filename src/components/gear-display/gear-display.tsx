@@ -35,7 +35,7 @@ export function GearDisplay({ gear }: { gear: GearSchema }) {
                   {slot.split("_").join(" ")}
                 </Label>
                 {items.map((item) => (
-                  <ItemPreview key={item.unique_id} item={item} />
+                  <ItemPreview key={item.unique_id} item={item} manage />
                 ))}
               </section>
             )

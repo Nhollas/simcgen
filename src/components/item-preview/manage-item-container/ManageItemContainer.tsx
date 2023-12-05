@@ -13,11 +13,22 @@ import { PenBox, Trash2, CopyPlus } from "lucide-react"
 import { ManageSocket } from "./mange-socket"
 import { ItemPreview } from "../item-preview"
 import { ManageEnchantment } from "./manage-enchantment"
-import { useFormContext } from "react-hook-form"
+import { useFieldArray, useFormContext } from "react-hook-form"
+import { inventoryTypeToSlot } from "@/lib/raidbots"
 
-export function EditItem({ item }: { item: GearItemSchema }) {
+// TODO: This should be EditItemContainer and follow the container/presentational pattern
+export function ManageItemContainer({ item }: { item: GearItemSchema }) {
   // Need to use parent form context to pass down. Otherwise, the form context gets out of sync. ??
-  const form = useFormContext<any, GearOutputSchema>()
+  const form = useFormContext<GearOutputSchema>()
+  const { inventoryType } = item
+  const slot = inventoryTypeToSlot(inventoryType)
+  const { fields, update } = useFieldArray({
+    control: form.control,
+    name: `gearInfo.${slot}` as const,
+  })
+
+  const index = fields.findIndex((field) => field.unique_id === item.unique_id)
+  const field = fields[index]
 
   return (
     <Dialog>
@@ -30,19 +41,24 @@ export function EditItem({ item }: { item: GearItemSchema }) {
           <span className="sr-only">Actions</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>Edit Item</DialogTitle>
           <DialogDescription>
             Make changes to this item. Changes will automatically be saved.
           </DialogDescription>
         </DialogHeader>
-        <ItemPreview item={item} noAction />
-        {isSocketable(item.inventoryType) && (
-          <ManageSocket form={form} item={item} />
+        <ItemPreview item={item} />
+        {isSocketable(inventoryType) && (
+          <ManageSocket update={update} item={field} index={index} />
         )}
-        {isEnchantable(item.inventoryType) && (
-          <ManageEnchantment form={form} item={item} />
+        {isEnchantable(inventoryType) && (
+          <ManageEnchantment
+            item={item}
+            index={index}
+            slot={slot}
+            update={update}
+          />
         )}
         <div className="grid grid-cols-2 gap-x-4">
           <Button className="flex w-full flex-row">

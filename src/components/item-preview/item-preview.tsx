@@ -6,29 +6,30 @@ import Image from "next/image"
 import { GemPreviews } from "./gem-previews"
 import { EnchantmentPreview } from "./enchantment-preview"
 import { GearItemSchema } from "@/schemas"
-import { EditItem } from "./edit-item"
-import clsx from "clsx"
+import { ManageItemContainer } from "./manage-item-container"
+import { cn } from "@/lib/utils"
 
 export function ItemPreview({
   item,
-  noAction,
+  manage = false,
 }: {
   item: GearItemSchema
-  noAction?: boolean
+  manage?: boolean
 }) {
-  console.log("item", item)
+  const { icon, quality, itemLevel, enchant_id, socketInfo, name, equipped } =
+    item
 
   return (
     <div
-      className={clsx(
+      className={cn(
         "relative flex h-[72px] w-full flex-row items-start gap-x-3 gap-y-4 rounded-lg bg-muted p-3",
-        noAction && "overflow-hidden",
+        manage && "overflow-hidden",
       )}
     >
       <Button
         className="h-full p-0.5"
         style={{
-          backgroundColor: qualityTypeToColour(item.quality),
+          backgroundColor: qualityTypeToColour(quality),
         }}
       >
         <Link
@@ -36,34 +37,34 @@ export function ItemPreview({
           href={createTooltipUrl(item)}
         >
           <Image
-            src={`https://www.raidbots.com/static/images/icons/56/${item.icon}.png`}
+            src={`https://www.raidbots.com/static/images/icons/56/${icon}.png`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            alt={item.name}
+            alt={name}
           />
         </Link>
       </Button>
       <div className="flex flex-col space-y-1 truncate">
         <div className="flex flex-row gap-x-4">
           <h1
-            style={{ color: qualityTypeToColour(item.quality) }}
+            style={{ color: qualityTypeToColour(quality) }}
             className="truncate text-base font-bold leading-5"
           >
-            {item.name}
+            {name}
           </h1>
-          {item.equipped && <Badge className="bg-yellow-500">Equipped</Badge>}
+          {equipped && <Badge className="bg-yellow-500">Equipped</Badge>}
         </div>
-        <div className="flex flex-row items-center gap-x-2 h-6">
-          <p className="flex-shrink-0 text-sm leading-3">{item.itemLevel}</p>
-          {item.socketInfo.PRISMATIC && (
-            <GemPreviews gems={item.socketInfo.PRISMATIC.gems} />
+        <div className="flex h-6 flex-row items-center gap-x-2">
+          <p className="flex-shrink-0 text-sm leading-3">{itemLevel}</p>
+          {socketInfo.PRISMATIC && (
+            <GemPreviews gems={socketInfo.PRISMATIC.gems} />
           )}
-          {item.enchant_id && (
-            <EnchantmentPreview enchantmentId={parseInt(item.enchant_id)} />
+          {enchant_id && (
+            <EnchantmentPreview enchantmentId={parseInt(enchant_id)} />
           )}
         </div>
       </div>
-      {!noAction && <EditItem item={item} />}
+      {manage && <ManageItemContainer item={item} />}
     </div>
   )
 }

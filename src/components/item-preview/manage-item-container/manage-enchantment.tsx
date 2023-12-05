@@ -13,37 +13,30 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui"
-import { inventoryTypeToSlot } from "@/lib/raidbots"
 import { cn } from "@/lib/utils"
-import { GearItemSchema, GearOutputSchema } from "@/schemas"
+import { GearItemSchema } from "@/schemas"
 import { CheckIcon, ChevronsUpDown } from "lucide-react"
-import { UseFormReturn, useFieldArray, useFormContext } from "react-hook-form"
 import enchantmentsData from "@/data/useable-enchantments.json"
 import { EnchantmentPreview } from "../enchantment-preview"
 import { useState } from "react"
+import { GearSlot } from "@/lib/raidbots"
 
 export function ManageEnchantment({
   item,
-  form,
+  index,
+  slot,
+  update,
 }: {
   item: GearItemSchema
-  form: UseFormReturn<GearOutputSchema>
+  index: number
+  slot: GearSlot
+  update: (index: number, value: GearItemSchema) => void
 }) {
-  const slot = inventoryTypeToSlot(item.inventoryType)
-  const { fields, update } = useFieldArray({
-    control: form.control,
-    name: `gearInfo.${slot}`,
-    keyName: "useFieldArrayId3",
-  })
-  console.log("ManageEnchantment", fields)
-
-  const index = fields.findIndex((field) => field.unique_id === item.unique_id)
-
   const [open, setOpen] = useState(false)
 
   const enchantments = enchantmentsData[slot]
 
-  const { enchant_id } = fields[index]
+  const { enchant_id } = item
 
   return (
     <FormItem className="flex flex-col">
@@ -72,7 +65,7 @@ export function ManageEnchantment({
         <PopoverContent className="w-full p-0">
           <Command>
             <CommandInput placeholder="Search enchantment..." className="h-9" />
-            <CommandList className="max-h-72 overscroll-scroll">
+            <CommandList className="overscroll-scroll max-h-72">
               <CommandEmpty>No enchantment found.</CommandEmpty>
               {enchantments.map((enchantment) => (
                 <CommandItem
@@ -88,7 +81,7 @@ export function ManageEnchantment({
                     )
 
                     update(index, {
-                      ...fields[index],
+                      ...item,
                       enchant_id:
                         enchantmentId === enchant_id
                           ? undefined

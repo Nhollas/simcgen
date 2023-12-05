@@ -13,11 +13,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui"
-import { inventoryTypeToSlot } from "@/lib/raidbots"
 import { cn } from "@/lib/utils"
-import { GearItemSchema, GearOutputSchema } from "@/schemas"
+import { GearItemSchema } from "@/schemas"
 import { CheckIcon, ChevronsUpDown } from "lucide-react"
-import { UseFormReturn, useFieldArray, useFormContext } from "react-hook-form"
 import { useState } from "react"
 import { GemPreviews } from "../gem-previews"
 import gems from "@/data/gems.json"
@@ -25,26 +23,16 @@ import { GemPreview } from "../gem-preview"
 
 export function ManageSocket({
   item,
-  form,
+  index,
+  update,
 }: {
   item: GearItemSchema
-  form: UseFormReturn<GearOutputSchema>
+  index: number
+  update: (index: number, value: GearItemSchema) => void
 }) {
-  const slot = inventoryTypeToSlot(item.inventoryType)
-  const { fields, update } = useFieldArray({
-    control: form.control,
-    name: `gearInfo.${slot}`,
-    keyName: "useFieldArrayId2",
-  })
-
-  console.log("ManageSocket", fields)
-
-  const index = fields.findIndex((field) => field.unique_id === item.unique_id)
   const [open, setOpen] = useState(false)
 
-  const { socketInfo } = fields[index]
-
-  console.log("field", fields[index])
+  const { socketInfo } = item
 
   return (
     <FormItem className="flex flex-col">
@@ -57,7 +45,7 @@ export function ManageSocket({
               role="combobox"
               aria-expanded={open}
               className={cn(
-                "justify-between w-max gap-x-2",
+                "w-max justify-between gap-x-2",
                 socketInfo.PRISMATIC && "text-muted-foreground",
               )}
             >
@@ -75,7 +63,7 @@ export function ManageSocket({
         <PopoverContent className="w-full p-0">
           <Command>
             <CommandInput placeholder="Search gem..." className="h-9" />
-            <CommandList className="max-h-72 overscroll-scroll">
+            <CommandList className="overscroll-scroll max-h-72">
               <CommandEmpty>No Gem found.</CommandEmpty>
               {gems.map((gem) => (
                 <CommandItem
@@ -94,14 +82,13 @@ export function ManageSocket({
                       socketId === socketInfo.PRISMATIC?.gems[0].id.toString()
                     ) {
                       update(index, {
-                        ...fields[index],
+                        ...item,
                         socketInfo: {},
                       })
                     } else {
                       update(index, {
-                        ...fields[index],
+                        ...item,
                         socketInfo: {
-                          ...fields[index].socketInfo,
                           PRISMATIC: {
                             // @ts-ignore
                             gems: [gem],
