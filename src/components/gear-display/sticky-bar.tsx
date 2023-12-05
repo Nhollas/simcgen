@@ -101,6 +101,7 @@ export function StickyBar() {
   )
 }
 
+// TODO: Scroll to item that was added.
 function handleSelectItem(item: string, form: UseFormReturn<GearOutputSchema>) {
   const itemId = item.split("_")[1]
 
@@ -121,6 +122,8 @@ function handleSelectItem(item: string, form: UseFormReturn<GearOutputSchema>) {
 
       .getValues(`gearInfo.${slot}`)
       ?.find((item) => item.unique_id === selectedItem.unique_id)
+
+    console.log("existingItem", existingItem)
 
     if (existingItem) {
       return
