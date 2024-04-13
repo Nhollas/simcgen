@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid"
 export async function POST(request: NextRequest) {
   const body = await request.json()
 
+
   const { searchParams } = new URL(request.url)
 
   try {
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
       }
     })
 
-    return NextResponse.json<GearSchema>(response.data)
+    return NextResponse.json(gearInfo)
   } catch (error) {
     return NextResponse.error()
   }

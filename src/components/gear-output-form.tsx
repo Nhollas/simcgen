@@ -8,7 +8,7 @@ export function GearOutputForm({
   children,
 }: {
   form: UseFormReturn<GearOutputSchema>
-  children: any
+  children: React.ReactNode
 }) {
   function handleSubmitTest(values: GearOutputSchema) {
     const simcExport = createSimcOutputFromInfo(values)

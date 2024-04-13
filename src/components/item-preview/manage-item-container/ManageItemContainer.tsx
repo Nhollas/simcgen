@@ -15,6 +15,7 @@ import { ItemPreview } from "../item-preview"
 import { ManageEnchantment } from "./manage-enchantment"
 import { useFieldArray, useFormContext } from "react-hook-form"
 import { inventoryTypeToSlot } from "@/lib/raidbots"
+import { DuplicateAction } from "./duplicate-action"
 
 // TODO: This should be EditItemContainer and follow the container/presentational pattern
 export function ManageItemContainer({ item }: { item: GearItemSchema }) {
@@ -22,7 +23,7 @@ export function ManageItemContainer({ item }: { item: GearItemSchema }) {
   const form = useFormContext<GearOutputSchema>()
   const { inventoryType } = item
   const slot = inventoryTypeToSlot(inventoryType)
-  const { fields, update } = useFieldArray({
+  const { fields, update, append } = useFieldArray({
     control: form.control,
     name: `gearInfo.${slot}` as const,
   })
@@ -61,10 +62,7 @@ export function ManageItemContainer({ item }: { item: GearItemSchema }) {
           />
         )}
         <div className="grid grid-cols-2 gap-x-4">
-          <Button className="flex w-full flex-row">
-            <CopyPlus className="mr-2 h-4 w-4" />
-            <span>Duplicate</span>
-          </Button>
+          <DuplicateAction append={append} item={item} />
           <Button variant="destructive" className="flex w-full flex-row">
             <Trash2 className="mr-2 h-4 w-4" />
             <span>Remove</span>

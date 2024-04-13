@@ -23,7 +23,7 @@ export function ItemPreview({
     <div
       id={`item-${item.unique_id}`}
       className={cn(
-        "relative flex h-[72px] w-full flex-row items-start gap-x-3 gap-y-4 rounded-lg bg-muted p-3",
+        "relative flex h-[72px] w-full flex-grow flex-row items-start gap-x-3 gap-y-4 rounded-lg bg-muted p-3",
         !manage && "overflow-hidden",
       )}
     >

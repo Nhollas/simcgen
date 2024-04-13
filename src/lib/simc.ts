@@ -1,11 +1,11 @@
 import {
   classIdToName,
-  classKey,
   classToId,
-  raidbotsQueryParamAdapter,
+  simcToRaidbotsQueryParamAdapter,
   specIdToName,
-  specKey,
   specToId,
+  RaidbotsSpecName,
+  RaidbotsClassName,
 } from "./raidbots"
 import { GearOutputSchema, GearItemSchema } from "@/schemas"
 
@@ -167,15 +167,17 @@ export function extractCharacterInfoFromInput(simcInput: string) {
   for (const line of filteredLines) {
     const [key, value] = line.split("=")
 
+    if (!key || !value) continue
+
     if (characterInfoKeys.includes(key)) {
       if (key === "spec") {
-        characterInfo["specId"] = specToId(value as specKey)
+        characterInfo["specId"] = specToId(value as RaidbotsSpecName)
       } else {
         characterInfo[key] = value
       }
     } else {
       if (possibleClasses.includes(key)) {
-        characterInfo["classId"] = classToId(key as classKey)
+        characterInfo["classId"] = classToId(key as RaidbotsClassName)
         characterInfo["name"] = value
       }
     }
@@ -203,7 +205,7 @@ export function createQueryParamsFromInput(simcInput: string) {
     return linesToKeep.some((lineToKeep) => line.startsWith(lineToKeep))
   })
 
-  const params = raidbotsQueryParamAdapter(filteredLines)
+  const params = simcToRaidbotsQueryParamAdapter(filteredLines)
 
   return params
 }
@@ -257,7 +259,6 @@ export function createSimcOutputFromInfo(values: GearOutputSchema): string {
     } else if (key === "name" || key === "classId") {
       // Do nothing
     } else {
-      // @ts-ignore
       lines.push(`${key}=${values.characterInfo[key]}`)
     }
   }
@@ -269,7 +270,6 @@ export function createSimcOutputFromInfo(values: GearOutputSchema): string {
     let trinket = false
     let ring = false
 
-    // @ts-ignore
     for (const item of values.gearInfo[key]) {
       let base = "#"
 
